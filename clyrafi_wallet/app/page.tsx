@@ -1,3 +1,4 @@
+import React from 'react';
 import Navbar from "@/component/navbar";
 import HeroSection from "@/component/hero-section";
 import Proposition from "@/component/proposition";
@@ -10,13 +11,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main>
+      <div>
         <HeroSection />
         <Proposition />
         <FeaturesSection />
         <BenefitsSection />
         <FAQSection />
-      </main>
+      </div>
     </div>
   );
 }
