@@ -1,4 +1,4 @@
-import { faqs } from "@/component/FAQ/faq-stats"
+import { faqs } from "@/app/Home/FAQ/faq-stats"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/component/ui/accordion"
 
 export default function FAQSection() {

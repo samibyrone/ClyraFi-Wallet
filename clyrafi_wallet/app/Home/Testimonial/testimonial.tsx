@@ -1,5 +1,5 @@
 import { testimonials } from "./testimonial";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../../../component/ui/avatar";
 
 export default function TestimonialsSection() {
   return (

@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from "@/component/navbar";
-import HeroSection from "@/component/hero-section";
-import Proposition from "@/component/proposition";
-import FeaturesSection from "@/component/Features/features";
-import BenefitsSection from "@/component/Benefit/benefit";
-import FAQSection from "@/component/FAQ/faq-section";
+import Navbar from "@/app/Home/Navbar/navbar";
+import HeroSection from "@/app/Home/Hero/hero-section";
+import Proposition from "@/app/Home/Proposition/proposition";
+import FeaturesSection from "@/app/Home/Features/features";
+import BenefitsSection from "@/app/Home/Benefit/benefit";
+import FAQSection from "@/app/Home/FAQ/faq-section";
 
 
 export default function Home() {

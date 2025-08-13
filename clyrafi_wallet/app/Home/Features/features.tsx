@@ -1,5 +1,5 @@
 import { Button } from "@/component/ui/Button";
-import { features } from "@/component/Features/features-stats";
+import { features } from "@/app/Home/Features/features-stats";
 
 export default function FeaturesSection() {
   return (
