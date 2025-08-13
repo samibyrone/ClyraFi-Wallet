@@ -1,4 +1,4 @@
-import { Button } from './ui/Button';
+import { Button } from '../../../component/ui/Button';
 import Link from 'next/link';
 
 export default function Navbar() {
