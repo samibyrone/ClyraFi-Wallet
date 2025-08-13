@@ -1,0 +1,39 @@
+export default function Proposition() {
+  return (
+    <section className='px-4 py-20 md:px-6 md:py-28 lg:px-8'>
+      <div className='mx-auto max-w-7xl'>
+        <div className='items-center ml-20 mt-20'>
+          <h2 className='mb-6 ml-10 text-3xl font-bold leading-tight text-gray-900 md:text-5xl'>
+            You control the logic, we handle the rails.
+          </h2>
+          <p className='mb-8 text-xl text-gray-600 items-center'>
+            Whether you`re running a fintech, a payroll tool, or a loan
+            platform, you can launch wallets, disburs funds, and track every
+            transaction programmatically.
+          </p>
+        </div>
+        <div className='grid items-center lg:grid-cols-2'>
+          <div className='flex justify-center'>
+            <div className='h-120 w-full max-w-lg rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200'></div>
+          </div>
+          <div className='h-120 w-120 mt-30 '>
+            <div className='rounded-2xl'>
+              <h3 className='mb-4 text-lg font-semibold leading-relaxed text-gray-900'>
+                ClyariFi is a Wallet-as-a-Service platform that lets you create,
+                manage, and control wallets across both fiat and blockchain
+                rails, using powerful APIs.
+              </h3>
+              <p className='text-gray-600 leading-relaxed'>
+                Whether you're running a fintech, a payroll tool, or a loan
+                platform, -you can launch wallets, disburse funds, and track
+                every transaction pragrammatically,ClyariFi provides the
+                infrastructure you need to get started quickly and scale
+                globally.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
