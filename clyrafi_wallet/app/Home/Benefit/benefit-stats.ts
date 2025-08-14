@@ -1,30 +1,30 @@
-import { Shield, Zap, Globe, DollarSign, Users, BarChart } from "lucide-react"
+import { Shield, Zap, Globe, DollarSign, Users, BarChart, CalculatorIcon, Computer } from "lucide-react"
 
 export const benefits = [
     {
       icon: Shield,
       title: "Secure by Design",
-      description: "Bank-grade security with end-to-end encryption and compliance with international standards.",
-    },
-    {
-      icon: Zap,
-      title: "Lightning Fast",
-      description: "Process transactions in milliseconds with our optimized infrastructure and global network.",
-    },
-    {
-      icon: Globe,
-      title: "Multi-Currency Support",
-      description: "Support for all major African currencies with real-time exchange rates and conversion.",
-    },
-    {
-      icon: DollarSign,
-      title: "Transparent Pricing",
-      description: "Simple, transparent pricing with no hidden fees. Pay only for what you use.",
+      description: "Industry-grade security, audit logs, and fraud protection built-in.",
     },
     {
       icon: Users,
-      title: "Built for Scale",
-      description: "Handle millions of transactions with automatic scaling and 99.9% uptime guarantee.",
+      title: "Developer- First",
+      description: "Clean REST APIs, great docs, SDKs, and Postman support.",
+    },
+    {
+      icon: DollarSign,
+      title: "Dual Currency Support",
+      description: "Issue fiat (e.g., USD) and stable coin (e.g., USDT on Sui) wallets.",
+    },
+    {
+      icon: CalculatorIcon,
+      title: "Audit & Reporting Ready",
+      description: "Wallet state, exports, tagging, permissions -all logged.",
+    },
+    {
+      icon: Computer,
+      title: "Programmable Wallet Login",
+      description: "Tag, freeze, route, or limit wallet activity -all via API.",
     },
     {
       icon: BarChart,
