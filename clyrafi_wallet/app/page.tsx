@@ -1,12 +1,13 @@
 import React from 'react';
 import Navbar from "@/app/Home/Navbar/navbar";
-import HeroSection from "@/app/Home/Hero/hero-section";
-import Proposition from "@/app/Home/Proposition/proposition";
-import FeaturesSection from "@/app/Home/Features/features";
-import BenefitsSection from "@/app/Home/Benefit/benefit";
-import FAQSection from "@/app/Home/FAQ/faq-section";
-import TestimonialsSection from "@/app/Home/Testimonial/testimonial";
+import Footer from '@/app/Home/Footer/footer';
 import CTASection from '@/app/Home/CTA/cta-section';
+import FAQSection from "@/app/Home/FAQ/faq-section";
+import HeroSection from "@/app/Home/Hero/hero-section";
+import BenefitsSection from "@/app/Home/Benefit/benefit";
+import FeaturesSection from "@/app/Home/Features/features";
+import Proposition from "@/app/Home/Proposition/proposition";
+import TestimonialsSection from "@/app/Home/Testimonial/testimonial";
 
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <FAQSection />
         <TestimonialsSection />
         <CTASection />
+        <Footer />
       </div>
     </div>
   );
