@@ -14,19 +14,14 @@ export default function ForgotPasswordPage() {
     e.preventDefault();
     setLoading(true);
     setMessage("");
-
-    // In a real application, you would send a request to your backend here
-    // to initiate the password reset process.
-    // For this example, we'll just simulate a delay and show a message.
     await new Promise((resolve) => setTimeout(resolve, 2000));
-
     setMessage("If an account with that email exists, a password reset link has been sent.");
     setLoading(false);
   };
 
   return (
-    <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20'>
-      <Card className='w-full max-w-md mx-4'>
+    <div className='min-h-screen flex items-center justify-center bg-purple-700'>
+      <Card className='w-full max-w-md mx-4 bg-white'>
         <form onSubmit={handleSubmit}>
           <CardHeader className='space-y-1'>
             <CardTitle className='text-2xl font-bold'>
@@ -53,14 +48,14 @@ export default function ForgotPasswordPage() {
           <CardFooter className='flex flex-col space-y-4'>
             <Button
               type='submit'
-              className='w-full'
+              className='w-full bg-purple-700 text-white'
               disabled={loading}
             >
               {loading ? "Sending..." : "Reset Password"}
             </Button>
             <div className='text-sm text-center text-muted-foreground'>
               Remember your password?{" "}
-              <Link href='/Auth/login' className='text-primary hover:underline'>
+              <Link href='/Auth/login' className='text-primary hover:text-gray-500 text-black'>
                 Sign in
               </Link>
             </div>

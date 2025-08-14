@@ -5,11 +5,17 @@ import { Route } from "next";
 import { useState } from "react";
 import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/component/ui/Button";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/component/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter
+} from "@/component/ui/card";
 
 export default function SignUpPage() {
   const { loading, signUp } = useAuth();
-  const [formData, setFormData] = useState({ 
+  const [formData, setFormData] = useState({
     country: "",
     businessName: "",
     firstName: "",
@@ -24,6 +30,10 @@ export default function SignUpPage() {
     softwareEngineer: false
   });
 
+  const handleInputChange = async (e: React.FocusEvent) => {
+    e.preventDefault();
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.acceptTerms) {
@@ -31,7 +41,7 @@ export default function SignUpPage() {
     }
     if (!formData.starterBusiness || !formData.registeredBusiness) {
       return;
-    }  
+    }
     if (!formData.softwareEngineer) {
       return;
     }
@@ -39,8 +49,11 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20'>
-      <Card className='w-full max-w-md mx-4'>
+    // <div>
+    //   <p>ClyraFi</p>
+    //   </div>
+    <div className='min-h-screen flex items-center justify-center bg-purple-700'>
+      <Card className='w-full max-w-md mx-4 bg-white'>
         <form onSubmit={handleSubmit}>
           <CardHeader className='space-y-1'>
             <CardTitle className='text-2xl font-bold'>
@@ -52,17 +65,18 @@ export default function SignUpPage() {
               <label htmlFor='country' className='text-sm font-medium'>
                 Country
               </label>
-              <input
+              <select
                 id='country'
-                type='text'
-                placeholder='Select country'
-                className='w-full px-3 py-2 border rounded-md'
                 value={formData.country}
-                onChange={(e) =>
-                  setFormData({ ...formData, country: e.target.value })
-                }
-                required
-              />
+                onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+                className='w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-500'
+              >
+                <option value=''>Select country</option>
+                <option value='nigeria'>Nigeria</option>
+                <option value='ghana'>Ghana</option>
+                <option value='kenya'>Kenya</option>
+                <option value='south-africa'>South Africa</option>
+              </select>
             </div>
             <div className='space-y-2'>
               <label htmlFor='business' className='text-sm font-medium'>
@@ -206,7 +220,7 @@ export default function SignUpPage() {
           <CardFooter className='flex flex-col space-y-4'>
             <Button
               type='submit'
-              className='w-full'
+              className='w-full bg-purple-700 text-white font-medium'
               // variant='gradient'
               disabled={loading}
             >
@@ -214,7 +228,7 @@ export default function SignUpPage() {
             </Button>
             <div className='text-sm text-center text-muted-foreground'>
               Already have an account?{" "}
-              <Link href='/Auth/login' className='text-primary hover:underline'>
+              <Link href='/Auth/login' className='text-primary hover:text-gray-500 text-black'>
                 Sign in
               </Link>
             </div>
