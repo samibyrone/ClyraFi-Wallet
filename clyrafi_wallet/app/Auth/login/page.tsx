@@ -20,8 +20,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20'>
-      <Card className='w-full max-w-md mx-4'>
+    <div className='min-h-screen flex items-center justify-center bg-purple-700'>
+      <Card className='w-full max-w-md mx-4 bg-white'>
         <form onSubmit={handleSubmit}>
           <CardHeader className='space-y-1'>
             <CardTitle className='text-2xl font-bold'>
@@ -61,7 +61,7 @@ export default function LoginPage() {
               />
             </div>
             <div className='text-right text-sm'>
-              <Link href='/Auth/forgot-password' className='text-primary hover:underline'>
+              <Link href='/Auth/forgot-password' className='text-primary hover:text-gray-500 text-black'>
                 Forgot password?
               </Link>
             </div>
@@ -69,7 +69,7 @@ export default function LoginPage() {
           <CardFooter className='flex flex-col space-y-4'>
             <Button
               type='submit'
-              className='w-full'
+              className='w-full bg-purple-700 text-white font-medium'
               // variant='gradient'
               disabled={loading}
             >
@@ -77,7 +77,7 @@ export default function LoginPage() {
             </Button>
             <div className='text-sm text-center text-muted-foreground'>
               Don't have an account?{" "}
-              <Link href='/Auth/signup' className='text-primary hover:underline'>
+              <Link href='/Auth/signup' className='text-primary hover:text-gray-500 text-black'>
                 Sign up
               </Link>
             </div>
