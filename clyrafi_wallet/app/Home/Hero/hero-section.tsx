@@ -1,3 +1,6 @@
+import React from "react";
+import Link from "next/link";
+
 export default function HeroSection() {
   return (
     <section className='text-center py-12 max-w-5xl mx-auto px-6'>
@@ -32,7 +35,7 @@ export default function HeroSection() {
       </div>
 
       <div>
-        <h1 className="font-semibold text-gray-500 text-sm mb-5">Trusted by</h1>
+        <h1 className='font-semibold text-gray-500 text-sm mb-5'>Trusted by</h1>
         <div className='flex justify-center items-center mb-20'>
           <div className='flex items-center space-x-8 opacity-60'>
             {Array.from({ length: 4 }).map((_, index) => (
@@ -45,20 +48,22 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="border border-gray-300 rounded-lg bg-white px-2 py-2 w-125 ml-50">
+      <div className='border border-gray-300 rounded-lg bg-white px-2 py-2 w-125 ml-50'>
         <div className='flex flex-wrap justify-center items-center gap-6 text-sm'>
           <span className='text-gray-500 font-medium'>Integration</span>
           <span className='text-gray-500 font-medium'>Why Clyra-Fi</span>
           <span className='text-gray-500 font-medium'>FAQ</span>
           <span className='text-gray-500 font-medium'>Pricing</span>
-          <button
-            type='button'
-            className='flex items-center space-x-2 bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors'
-          >
-            <span className='font-medium'>Create free account</span>
-          </button>
+          <Link href="/signup">
+            <button
+              type='button'
+              className='flex items-center space-x-2 bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors'
+            >
+              <span className='font-medium'>Create free account</span>
+            </button>
+          </Link>
         </div>
       </div>
     </section>
   );
-};
+}

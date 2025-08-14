@@ -1,4 +1,4 @@
-import { testimonials } from "./testimonial";
+import { testimonials } from "./testimonial-stats";
 import { Avatar, AvatarFallback, AvatarImage } from "../../../component/ui/avatar";
 
 export default function TestimonialsSection() {

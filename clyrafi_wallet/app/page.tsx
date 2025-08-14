@@ -5,6 +5,8 @@ import Proposition from "@/app/Home/Proposition/proposition";
 import FeaturesSection from "@/app/Home/Features/features";
 import BenefitsSection from "@/app/Home/Benefit/benefit";
 import FAQSection from "@/app/Home/FAQ/faq-section";
+import TestimonialsSection from "@/app/Home/Testimonial/testimonial";
+import CTASection from '@/app/Home/CTA/cta-section';
 
 
 export default function Home() {
@@ -17,7 +19,9 @@ export default function Home() {
         <FeaturesSection />
         <BenefitsSection />
         <FAQSection />
+        <TestimonialsSection />
+        <CTASection />
       </div>
     </div>
   );
-}
+};
