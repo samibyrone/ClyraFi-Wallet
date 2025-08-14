@@ -54,7 +54,7 @@ export default function HeroSection() {
           <span className='text-gray-500 font-medium'>Why Clyra-Fi</span>
           <span className='text-gray-500 font-medium'>FAQ</span>
           <span className='text-gray-500 font-medium'>Pricing</span>
-          <Link href="/signup">
+          <Link href="/Auth/signup">
             <button
               type='button'
               className='flex items-center space-x-2 bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors'
