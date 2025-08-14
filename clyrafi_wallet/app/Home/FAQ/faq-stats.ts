@@ -2,7 +2,7 @@ export const faqs = [
     {
       question: "Do I need a license to use ClyariFi?",
       answer:
-        "No, you don't need a separate license. ClyariFi handles all regulatory compliance and licensing requirements for you.",
+        "No, We provide the infrastructure. You handle end-user compliance based on your local laws. KYB/KYC",
     },
     {
       question: "Can I test the API and get support?",
