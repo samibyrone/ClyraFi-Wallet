@@ -1,10 +1,10 @@
 export const footerSections = [
     {
       title: "Company",
-      links: ["About", "Blog", "Careers", "Press"],
+      links: ["Service", "Resources", "About us"],
     },
     {
       title: "Help",
-      links: ["Support", "Documentation", "API Reference", "Status"],
+      links: ["Customer Support", "Terms & Conditions", "Privacy Policy"],
     },
   ]

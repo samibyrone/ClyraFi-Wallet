@@ -5,13 +5,7 @@ import { Route } from "next";
 import { useState } from "react";
 import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/component/ui/Button";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter
-} from "@/component/ui/card";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/component/ui/card";
 
 export default function SignUpPage() {
   const { loading, signUp } = useAuth();
@@ -29,10 +23,6 @@ export default function SignUpPage() {
     registeredBusiness: false,
     softwareEngineer: false
   });
-
-  const handleInputChange = async (e: React.FocusEvent) => {
-    e.preventDefault();
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,10 +62,13 @@ export default function SignUpPage() {
                 className='w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-500'
               >
                 <option value=''>Select country</option>
-                <option value='nigeria'>Nigeria</option>
                 <option value='ghana'>Ghana</option>
                 <option value='kenya'>Kenya</option>
+                <option value="canada">Canada</option>
+                <option value='nigeria'>Nigeria</option>
                 <option value='south-africa'>South Africa</option>
+                <option value="united-state">United State</option>
+                <option value="united-kingdom">United Kingdom</option>
               </select>
             </div>
             <div className='space-y-2'>
