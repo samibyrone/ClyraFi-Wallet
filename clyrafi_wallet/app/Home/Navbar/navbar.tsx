@@ -9,7 +9,7 @@ export default function Navbar() {
           <div className="h-8 w-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500"></div>
           <span className="text-xl font-bold text-gray-900">ClyariFi</span>
         </div>
-        <Link href="/login">
+        <Link href="/Auth/login">
           <Button variant="outline" className="border border-black text-black hover:bg-gray-50 bg-transparent font-semibold">
             Login
           </Button>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/component/ui/Button";
 import { features } from "@/app/Home/Features/features-stats";
 
@@ -19,8 +20,9 @@ export default function FeaturesSection() {
                 </div>
               ))}
             </div>
-
-            <Button className="mt-12 h-12 bg-gray-900 px-8 text-white hover:bg-gray-800">Start building</Button>
+            <Link href="/Auth/login">
+              <Button className="mt-12 h-12 bg-gray-900 px-8 text-white hover:bg-gray-800">Start building</Button>
+            </Link>
           </div>
 
           <div className="flex justify-center">
