@@ -66,8 +66,9 @@ export default function SignUpPage() {
                 Country
               </label>
               <select
+                id='country'
                 value={formData.country}
-                onChange={(e) => setFormData("country", e.target.value)}
+                onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                 className='w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-500'
               >
                 <option value=''>Select country</option>
