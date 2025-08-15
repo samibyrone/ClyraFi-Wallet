@@ -12,13 +12,13 @@ export default function FAQSection() {
 
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="rounded-lg border border-gray-200 px-6">
-              <AccordionTrigger className="text-left font-medium">{faq.question}</AccordionTrigger>
-              <AccordionContent className="text-gray-600">{faq.answer}</AccordionContent>
+            <AccordionItem key={index} value={`item-${index}`} className="rounded-lg shadow-sm px-6">
+              <AccordionTrigger className="text-left text-gray-900 font-semibold">{faq.question}</AccordionTrigger>
+              <AccordionContent className="text-gray-600 font-medium">{faq.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
       </div>
     </section>
-  )
-}
+  );
+};
