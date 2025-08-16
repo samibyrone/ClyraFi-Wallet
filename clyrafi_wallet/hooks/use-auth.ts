@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { handleApiResponse, showErrorToast } from "@/lib/api-utils";
 
 interface SignUpData {
   country: string;
@@ -26,31 +25,19 @@ export function useAuth() {
 
   const signUp = async (data: SignUpData) => {
     if (data.password !== data.confirmPassword) {
-      showErrorToast("Passwords do not match");
+      alert("Passwords do not match"); // Using alert for simplicity
       return;
     }
 
     setLoading(true);
     try {
-      const response = await fetch("/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          country: data.country,
-          businessName: data.businessName,
-          firstName: data.firstName,
-          lastName: data.lastName,
-          phoneNumber: data.phoneNumber,
-          emailAddress: data.emailAddress,
-          password: data.password,
-          confirmPassword: data.confirmPassword
-        })
-      });
-
-      const result = await handleApiResponse(response);
-      if (result) {
-        router.push("/home");
-      }
+      // Store user data in localStorage
+      localStorage.setItem("user", JSON.stringify({ email: data.emailAddress, password: data.password }));
+      alert("Account created successfully! Please sign in.");
+      router.push("/Auth/login"); // Redirect to login page after signup
+    } catch (error) {
+      console.error("Signup error:", error);
+      alert("An error occurred during signup.");
     } finally {
       setLoading(false);
     }
@@ -59,21 +46,20 @@ export function useAuth() {
   const signIn = async (data: SignInData) => {
     setLoading(true);
     try {
-      const response = await fetch("/api/auth/signin", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: data.email,
-          password: data.password
-        })
-      });
-
-      const result = await handleApiResponse(response);
-      if (result) {
-        router.push("/home");
+      const storedUser = localStorage.getItem("user");
+      if (storedUser) {
+        const user = JSON.parse(storedUser);
+        if (user.email === data.email && user.password === data.password) {
+          router.push("/Dashboard");
+        } else {
+          alert("Invalid email or password.");
+        }
       } else {
-        return null;
+        alert("No account found. Please sign up.");
       }
+    } catch (error) {
+      console.error("Sign-in error:", error);
+      alert("An error occurred during sign-in.");
     } finally {
       setLoading(false);
     }
