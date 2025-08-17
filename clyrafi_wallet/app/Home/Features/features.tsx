@@ -20,7 +20,7 @@ export default function FeaturesSection() {
                 </div>
               ))}
             </div>
-            <Link href="/Auth/login">
+            <Link href="/Dashboard">
               <Button className="mt-12 h-12 bg-gray-900 px-8 text-white hover:bg-gray-800">Start building</Button>
             </Link>
           </div>

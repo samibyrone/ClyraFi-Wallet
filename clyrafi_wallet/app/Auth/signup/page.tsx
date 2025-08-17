@@ -26,15 +26,16 @@ export default function SignUpPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.acceptTerms) {
-      return;
-    }
-    if (!formData.starterBusiness || !formData.registeredBusiness) {
-      return;
-    }
-    if (!formData.softwareEngineer) {
-      return;
-    }
+    // Temporarily disable these checks for local storage testing
+    // if (!formData.acceptTerms) {
+    //   return;
+    // }
+    // if (!formData.starterBusiness || !formData.registeredBusiness) {
+    //   return;
+    // }
+    // if (!formData.softwareEngineer) {
+    //   return;
+    // }
     await signUp(formData);
   };
 
@@ -231,3 +232,181 @@ export default function SignUpPage() {
     </div>
   );
 }
+
+
+
+
+                // {/* Business Name */}
+                // <div>
+                //   <label className="block text-sm font-medium text-gray-700 mb-2">
+                //     Business name
+                //   </label>
+                //   <input
+                //     type="text"
+                //     value={formData.businessName}
+                //     onChange={(e) => handleInputChange('businessName', e.target.value)}
+                //     placeholder="Enter business name"
+                //     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                //   />
+                // </div>
+
+                // {/* First Name */}
+                // <div>
+                //   <label className="block text-sm font-medium text-gray-700 mb-2">
+                //     First name
+                //   </label>
+                //   <input
+                //     type="text"
+                //     value={formData.firstName}
+                //     onChange={(e) => handleInputChange('firstName', e.target.value)}
+                //     placeholder="Enter first name"
+                //     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                //   />
+                // </div>
+
+                // {/* Last Name */}
+                // <div>
+                //   <label className="block text-sm font-medium text-gray-700 mb-2">
+                //     Last name
+                //   </label>
+                //   <input
+                //     type="text"
+                //     value={formData.lastName}
+                //     onChange={(e) => handleInputChange('lastName', e.target.value)}
+                //     placeholder="Enter last name"
+                //     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                //   />
+                // </div>
+
+                // {/* Phone Number */}
+                // <div>
+                //   <label className="block text-sm font-medium text-gray-700 mb-2">
+                //     Phone number
+                //   </label>
+                //   <input
+                //     type="tel"
+                //     value={formData.phoneNumber}
+                //     onChange={(e) => handleInputChange('phoneNumber', e.target.value)}
+                //     placeholder="Enter password"
+                //     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                //   />
+                // </div>
+
+                // {/* Email */}
+                // <div>
+                //   <label className="block text-sm font-medium text-gray-700 mb-2">
+                //     Email
+                //   </label>
+                //   <div className="relative">
+                //     <Mail className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
+                //     <input
+                //       type="email"
+                //       value={formData.email}
+                //       onChange={(e) => handleInputChange('email', e.target.value)}
+                //       placeholder="Enter email"
+                //       className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                //     />
+                //   </div>
+                // </div>
+
+                // {/* Password */}
+                // <div>
+                //   <label className="block text-sm font-medium text-gray-700 mb-2">
+                //     Password
+                //   </label>
+                //   <div className="relative">
+                //     <input
+                //       type={showPassword ? "text" : "password"}
+                //       value={formData.password}
+                //       onChange={(e) => handleInputChange('password', e.target.value)}
+                //       placeholder="Enter password"
+                //       className="w-full pr-10 pl-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                //     />
+                //     <button
+                //       type="button"
+                //       onClick={() => setShowPassword(!showPassword)}
+                //       className="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600"
+                //     >
+                //       {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                //     </button>
+                //     <span className="absolute right-12 top-2.5 text-sm text-purple-600 cursor-pointer hover:text-purple-700">
+                //       Show
+                //     </span>
+                //   </div>
+                // </div>
+
+                // {/* Business Type */}
+                // <div className="space-y-4">
+                //   <label className="block text-sm font-medium text-gray-700">
+                //     What type of business do you own?
+                //   </label>
+                  
+                //   <div className="space-y-3">
+                //     <label className="flex items-start space-x-3 cursor-pointer">
+                //       <input
+                //         type="radio"
+                //         name="businessType"
+                //         value="starter"
+                //         checked={formData.businessType === 'starter'}
+                //         onChange={(e) => handleInputChange('businessType', e.target.value)}
+                //         className="mt-1 w-4 h-4 text-purple-600 border-gray-300 focus:ring-purple-500"
+                //       />
+                //       <div>
+                //         <div className="font-medium text-gray-900">Starter business</div>
+                //         <div className="text-sm text-gray-500">
+                //           I'm testing my ideas with real customers, and preparing to register my company
+                //         </div>
+                //       </div>
+                //     </label>
+
+                //     <label className="flex items-start space-x-3 cursor-pointer">
+                //       <input
+                //         type="radio"
+                //         name="businessType"
+                //         value="registered"
+                //         checked={formData.businessType === 'registered'}
+                //         onChange={(e) => handleInputChange('businessType', e.target.value)}
+                //         className="mt-1 w-4 h-4 text-purple-600 border-gray-300 focus:ring-purple-500"
+                //       />
+                //       <div>
+                //         <div className="font-medium text-gray-900">Registered business</div>
+                //         <div className="text-sm text-gray-500">
+                //           My business has the approval, documentation, and licences required to operate legally
+                //         </div>
+                //       </div>
+                //     </label>
+                //   </div>
+                // </div>
+
+                // {/* Developer Question */}
+                // <div className="space-y-4">
+                //   <label className="block text-sm font-medium text-gray-700">
+                //     Are you a software developer?
+                //   </label>
+                  
+                //   <div className="flex space-x-6">
+                //     <label className="flex items-center space-x-2 cursor-pointer">
+                //       <input
+                //         type="radio"
+                //         name="isDeveloper"
+                //         value="yes"
+                //         checked={formData.isDeveloper === 'yes'}
+                //         onChange={(e) => handleInputChange('isDeveloper', e.target.value)}
+                //         className="w-4 h-4 text-purple-600 border-gray-300 focus:ring-purple-500"
+                //       />
+                //       <span className="text-sm text-gray-900">Yes, I am</span>
+                //     </label>
+
+                //     <label className="flex items-center space-x-2 cursor-pointer">
+                //       <input
+                //         type="radio"
+                //         name="isDeveloper"
+                //         value="no"
+                //         checked={formData.isDeveloper === 'no'}
+                //         onChange={(e) => handleInputChange('isDeveloper', e.target.value)}
+                //         className="w-4 h-4 text-purple-600 border-gray-300 focus:ring-purple-500"
+                //       />
+                //       <span className="text-sm text-gray-900">No, I am not</span>
+                //     </label>
+                //   </div>
+                // </div>
