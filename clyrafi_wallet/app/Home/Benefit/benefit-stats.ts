@@ -1,4 +1,4 @@
-import { Shield, Zap, Globe, DollarSign, Users, BarChart, CalculatorIcon, Computer } from "lucide-react"
+import { Shield, DollarSign, Users, BarChart, CalculatorIcon, Computer } from "lucide-react"
 
 export const benefits = [
     {

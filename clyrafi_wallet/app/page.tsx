@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <div>
+      <main>
         <HeroSection />
         <Proposition />
         <FeaturesSection />
@@ -22,8 +22,8 @@ export default function Home() {
         <FAQSection />
         <TestimonialsSection />
         <CTASection />
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 };
