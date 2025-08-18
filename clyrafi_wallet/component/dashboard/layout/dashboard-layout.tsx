@@ -26,7 +26,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
               <div className="w-4 h-4 bg-purple-900 rounded-sm"></div>
             </div>
-            <span className="text-xl font-semibold">ClyariFi</span>
+            <span className="text-xl font-semibold">ClyraFi</span>
           </div>
         </div>
 
@@ -51,15 +51,15 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                 </div>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-56">
+            <DropdownMenuContent align="start" className="w-56 bg-white">
               <DropdownMenuItem asChild>
-                <a href="/dashboard/settings" className="flex items-center">
+                <a href="/dashboard/settings" className="flex items-center hover:bg-gray-200">
                   <User className="w-4 h-4 mr-2" />
                   Profile Settings
                 </a>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={logout} className="text-red-600 focus:text-red-600">
+              <DropdownMenuItem onClick={logout} className="text-red-600 focus:text-red-600 hover:bg-gray-200">
                 <LogOut className="w-4 h-4 mr-2" />
                 Sign Out
               </DropdownMenuItem>
@@ -73,7 +73,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               <a
                 key={item.name}
                 href={item.href}
-                className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-purple-800 hover:text-white transition-colors"
+                className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-white hover:text-purple-800 transition-colors"
               >
                 <item.icon className="w-5 h-5" />
                 <span>{item.name}</span>
@@ -82,6 +82,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
             <div className="mt-6">
               <button
+                type="button"
                 onClick={() => setPaymentExpanded(!paymentExpanded)}
                 className="flex items-center justify-between w-full px-3 py-2 text-xs font-semibold text-purple-300 uppercase tracking-wider"
               >
@@ -94,7 +95,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-purple-800 hover:text-white transition-colors"
+                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-white hover:text-purple-800 transition-colors"
                     >
                       <item.icon className="w-5 h-5" />
                       <span>{item.name}</span>
@@ -106,6 +107,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
             <div className="mt-6">
               <button
+                type="button"
                 onClick={() => setRecurringExpanded(!recurringExpanded)}
                 className="flex items-center justify-between w-full px-3 py-2 text-xs font-semibold text-purple-300 uppercase tracking-wider"
               >
@@ -118,7 +120,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-purple-800 hover:text-white transition-colors"
+                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-white hover:text-purple-800 transition-colors"
                     >
                       <item.icon className="w-5 h-5" />
                       <span>{item.name}</span>
@@ -130,6 +132,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
             <div className="mt-6">
               <button
+                type="button"
                 onClick={() => setCommerceExpanded(!commerceExpanded)}
                 className="flex items-center justify-between w-full px-3 py-2 text-xs font-semibold text-purple-300 uppercase tracking-wider"
               >
@@ -142,7 +145,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-purple-800 hover:text-white transition-colors"
+                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-white hover:text-purple-800 transition-colors"
                     >
                       <item.icon className="w-5 h-5" />
                       <span>{item.name}</span>
@@ -159,7 +162,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-purple-800 hover:text-white transition-colors"
+                  className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-white hover:text-purple-800 transition-colors"
                 >
                   <item.icon className="w-5 h-5" />
                   <span>{item.name}</span>
