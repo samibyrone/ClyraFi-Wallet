@@ -3,7 +3,7 @@ import { Home, FileText, CreditCard, Users, RefreshCw, DollarSign, AlertTriangle
 
 export const navigationItems = [
   { name: "Get started", icon: Home, href: "/dashboard" },
-  { name: "Compliance", icon: FileText, href: "/dashboard" },
+  { name: "Compliance", icon: FileText, href: "/dashboard/compliance" },
   { name: "Home", icon: Home, href: "/dashboard/home" },
 ]
 
