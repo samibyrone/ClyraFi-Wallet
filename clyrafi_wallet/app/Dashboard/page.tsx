@@ -1,44 +1,76 @@
 import { getStarted } from "./dashPage";
+import Link from "next/link";
 import Dashbar from "./Dashboard-Navbar/page";
-import { ComplianceForm } from "@/component/dashboard/compliance-form";
-import { DashboardLayout } from "@/component/dashboard/layout/dashboard-layout";
-import { Link } from "lucide-react";
 import { Button } from "@/component/ui/Button";
+import { Server, WalletCardsIcon, FileText } from "lucide-react";
+import { ComplianceForm } from "@/component/dashboard/compliance-form";
+import { Card, CardContent, CardHeader, CardTitle } from "@/component/ui/card"
+import { DashboardLayout } from "@/component/dashboard/layout/dashboard-layout";
 
 export default function DashboardPage() {
   return (
     <DashboardLayout>
-      <div className='p-6'>
+      <div className=''>
         <Dashbar />
-        <p className='text-2xl font-semibold text-gray-900 mb-6 items-center'>
-          Welcome to <span className='text-purple-800'>ClyraFi</span>
-        </p>
-        <h1>Your business is in test mode</h1>
-        {/* <ComplianceForm /> */}
+        <ComplianceForm />
       </div>
-      <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3 ml-20 mr-20 mt-30'>
-        {getStarted.map((getStarted, index) => (
-          <div
-            key={index}
-            className='rounded-2xl bg-white p-8 shadow-sm border border-gray-100'
-          >
-            <div className='mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-purple-100'>
-              <getStarted.icon className='h-7 w-7 text-purple-600' />
-            </div>
-            <h3 className='mb-3 text-xl font-semibold text-gray-900'>
-              {getStarted.title}
-            </h3>
-            <p className='text-gray-600 leading-relaxed'>
-              {getStarted.description}
+       <section id="dashboard" className="py-20 px-4 bg-white">
+        <div className="container mx-auto mt-10 mb-30">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 ">Welcome to <span className="text-purple-800">ClyraFi</span></h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto font-semibold">
+              Your business is in test mode
             </p>
-            <div>
-              <Button className='bg-purple-500 rounded-full'>
-                <p className='text-white bg-puple-800 '>{getStarted.button}</p>
-              </Button>
-            </div>
           </div>
-        ))}
-      </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-15 text-center pl-20">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <Server className="h-10 w-10 text-blue-600 mb-4"/>
+                <CardTitle className="font-bold text-xl">API testing</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600">
+                  Access our developer tools and create a test API key to begin integrating our services.
+                </p>
+              </CardContent>
+                <Link href="/dashboard/api-testing" className="items-center">
+                  <Button className="rounded-lg bg-purple-800 text-white text-lg hover:text-gray-300 font-medium mb-7 py-6 px-12">Generate Test API</Button>
+                </Link>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <WalletCardsIcon className="h-10 w-10 text-purple-600 mb-4" />
+                <CardTitle className="font-bold text-xl">Wallet</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600">
+                 Experience the full functionality of our platform in a simulated environment using the demo wallet.
+                </p>
+              </CardContent>
+                <Link href="/dashboard/wallet" className="items-center">
+                  <Button className="rounded-lg bg-purple-800 text-white hover:text-gray-300 text-lg font-medium mb-7 py-6 px-12">Demo Test Wallet</Button>
+                </Link>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <FileText className="h-10 w-10 text-green-600 mb-4" />
+                <CardTitle className="font-bold text-xl">Documentation</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600">
+                 Explore detailed guides, code samples, and technical specifications in our API documentation.
+                </p>
+              </CardContent>
+                <Link href="/dashboard/documentation" className="items-center">
+                  <Button className="rounded-lg bg-purple-800 text-white hover:text-gray-300 text-lg font-medium mb-7 py-6 px-10">API Documentation</Button>
+                </Link>
+            </Card>
+          </div>
+        </div>
+      </section>
     </DashboardLayout>
   );
-}
+};
