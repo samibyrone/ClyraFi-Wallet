@@ -53,13 +53,13 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-56 bg-white">
               <DropdownMenuItem asChild>
-                <a href="/dashboard/settings" className="flex items-center hover:bg-gray-200">
+                <a href="/dashboard/settings" className="flex items-center hover:bg-gray-200 font-semibold">
                   <User className="w-4 h-4 mr-2" />
                   Profile Settings
                 </a>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={logout} className="text-red-600 focus:text-red-600 hover:bg-gray-200">
+              <DropdownMenuItem onClick={logout} className="text-red-600 focus:text-red-600 hover:bg-gray-200 font-semibold">
                 <LogOut className="w-4 h-4 mr-2" />
                 Sign Out
               </DropdownMenuItem>
@@ -67,7 +67,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           </DropdownMenu>
         </div>
 
-        <nav className="flex-1 overflow-y-auto py-4">
+        <nav className="flex-1 w-full overflow-y-auto overflow-x-hidden py-4">
           <div className="px-4 space-y-1">
             {navigationItems.map((item) => (
               <a
@@ -174,7 +174,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       </div>
 
       <div className="flex-1 overflow-hidden">
-        <main className="h-full overflow-y-auto">{children}</main>
+        <main className="h-full overflow-y-auto overflow-x-hidden">{children}</main>
       </div>
     </div>
   );

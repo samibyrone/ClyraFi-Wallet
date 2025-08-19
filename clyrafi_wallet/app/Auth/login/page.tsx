@@ -3,15 +3,25 @@
 import Link from "next/link";
 import { Route } from "next";
 import { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
+import { Input } from "@/component/ui/input";
+import { Label } from "@/component/ui/label";
 import { Button } from "@/component/ui/Button";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/component/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter
+} from "@/component/ui/card";
 
 export default function LoginPage() {
   const { loading, signIn } = useAuth();
-  const [formData, setFormData] = useState({ 
+  const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState({
     email: "",
-    password: "",
+    password: ""
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -30,10 +40,10 @@ export default function LoginPage() {
           </CardHeader>
           <CardContent className='space-y-4'>
             <div className='space-y-2'>
-              <label htmlFor='email' className='text-sm font-medium'>
+              <Label htmlFor='email' className='text-sm font-medium'>
                 Enter email
-              </label>
-              <input
+              </Label>
+              <Input
                 id='email'
                 type='email'
                 placeholder='@example.com'
@@ -46,10 +56,10 @@ export default function LoginPage() {
               />
             </div>
             <div className='space-y-2'>
-              <label htmlFor='password' className='text-sm font-medium'>
+              <Label htmlFor='password' className='text-sm font-medium'>
                 Password
-              </label>
-              <input
+              </Label>
+              <Input
                 id='password'
                 type='password'
                 className='w-full px-3 py-2 border rounded-md'
@@ -59,9 +69,25 @@ export default function LoginPage() {
                 }
                 required
               />
+              <Button
+                type='button'
+                variant='ghost'
+                size='icon'
+                className='absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8'
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? (
+                  <EyeOff className='h-4 w-4' />
+                ) : (
+                  <Eye className='h-4 w-4' />
+                )}
+              </Button>
             </div>
             <div className='text-right text-sm'>
-              <Link href='/Auth/forgot-password' className='text-primary hover:text-gray-500 text-black'>
+              <Link
+                href='/Auth/forgot-password'
+                className='text-primary hover:text-gray-500 text-black'
+              >
                 Forgot password?
               </Link>
             </div>
@@ -77,7 +103,10 @@ export default function LoginPage() {
             </Button>
             <div className='text-sm text-center text-muted-foreground'>
               Don't have an account?{" "}
-              <Link href='/Auth/signup' className='text-primary hover:text-gray-500 text-black'>
+              <Link
+                href='/Auth/signup'
+                className='text-primary hover:text-gray-500 text-black'
+              >
                 Sign up
               </Link>
             </div>
