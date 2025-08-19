@@ -9,13 +9,13 @@ export default function HeroSection() {
         <span className='font-medium'>Now Available in Nigeria</span>
       </div>
 
-      <h1 className='text-6xl md:text-7xl font-bold mb-8 leading-[1.1] tracking-tight'>
+      <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight'>
         <span className='text-gray-900'>Programmable payments</span>
         <br />
         <span className='text-gray-900'>infrastructure for Africa</span>
       </h1>
 
-      <p className='text-xl text-gray-600 mb-12 mx-auto leading-relaxed'>
+      <p className='text-lg sm:text-xl text-gray-600 mb-12 mx-auto leading-relaxed'>
         Dual-currency wallets. Powerful APIs. Built for African fintechs,
         edtechs, and workforce platforms.
       </p>
@@ -24,7 +24,7 @@ export default function HeroSection() {
         <input
           type='email'
           placeholder='Enter your email address'
-          className='px-4 py-3 border border-gray-100 bg-white rounded-lg w-full sm:flex-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900'
+          className='px-4 py-3 border border-gray-100 bg-white rounded-lg w-full sm:flex-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 mb-4 sm:mb-0'
         />
         <button
           type='button'
