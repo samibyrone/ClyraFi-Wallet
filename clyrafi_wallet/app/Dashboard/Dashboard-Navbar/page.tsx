@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Bell, User } from "lucide-react";
+import { Bell, ChevronDown, User, UserCircle } from "lucide-react";
 import { Button } from "../../../component/ui/Button";
+import { Popover, PopoverTrigger } from "@/component/ui/popover";
 
 export default function Dashbar() {
   return (
@@ -10,22 +11,40 @@ export default function Dashbar() {
           <div className='h-8 w-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500'></div>
           <span className='text-xl font-bold text-gray-900'>ClyraFi</span>
         </div>
-        <div className="mr-10">
+        <div className='flex gap-4'>
           <Link href=''>
             <Button className='rounded-full bg-red-100 text-black hover:bg-red-200 font-semibold'>
               test mode
             </Button>
           </Link>
-          <Link href={""}>
-            <Button size='icon' className='hover:text-purple-500'>
-              <Bell className='h-5 w-5' />
-            </Button>
-          </Link>
-          <Link href={""}>
-            <Button size='icon' className='hover:text-purple-500'>
-              <User  className="h-5 w-5"/>
-            </Button>
-          </Link>
+            <Link href={""}>
+              <Button size='icon' className='hover:text-purple-500'>
+                <Bell className='h-5 w-5' />
+              </Button>
+            </Link>
+            <Link href={""}>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    size='icon'
+                    className='w-full flex items-center gap-1 p-2 rounded-lg hover:bg-accent transition-colors'
+                  >
+                    <div className='flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary'>
+                      <UserCircle className='w-5 h-5 hover:text-purple-500' />
+                    </div>
+                    <div className='flex-1 text-left'>
+                      <p className='text-sm font-medium truncate'>
+                        {User?.name}
+                      </p>
+                      <p className='text-xs text-muted-foreground truncate'>
+                        {User?.name}
+                      </p>
+                    </div>
+                    <ChevronDown className='w-5 h-5 text-muted-foreground hover:text-purple-500' />
+                  </Button>
+                </PopoverTrigger>
+              </Popover>
+            </Link>
         </div>
       </div>
     </header>
