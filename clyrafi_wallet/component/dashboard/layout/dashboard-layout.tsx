@@ -1,12 +1,14 @@
 "use client"
 
-import React, { useState } from "react"
-import { Button } from "@/component/ui/Button"
-import { useUser } from "@/component/user-context"
-import { Avatar, AvatarFallback } from "@/component/ui/avatar"
-import { ChevronDown, ChevronRight, LogOut, User } from "lucide-react"
-import { navigationItems, paymentItems, recurringItems, commerceItems, bottomItems } from "./dashboard-stats"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/component/ui/dropdown-menu"
+import Image from "next/image";
+import logo from "@/public/logo2.png";
+import React, { useState } from "react";
+import { Button } from "@/component/ui/Button";
+import { useUser } from "@/component/user-context";
+import { Avatar, AvatarFallback } from "@/component/ui/avatar";
+import { ChevronDown, ChevronRight, LogOut, User } from "lucide-react";
+import { navigationItems, paymentItems, recurringItems, commerceItems, bottomItems } from "./dashboard-stats";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/component/ui/dropdown-menu";
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -24,7 +26,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         <div className="p-6 border-b border-purple-800">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-purple-900 rounded-sm"></div>
+              <Image src={logo} alt="logo" className="w-6 h-6"/>
             </div>
             <span className="text-xl font-semibold">ClyraFi</span>
           </div>

@@ -1,20 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Route } from "next";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { Input } from "@/component/ui/input";
 import { Label } from "@/component/ui/label";
 import { Button } from "@/component/ui/Button";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter
-} from "@/component/ui/card";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/component/ui/card";
 
 export default function LoginPage() {
   const { loading, signIn } = useAuth();
@@ -30,7 +23,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className='min-h-screen flex items-center justify-center bg-purple-700'>
+    <div className='min-h-screen flex items-center justify-center bg-purple-900'>
       <Card className='w-full max-w-md mx-4 bg-white'>
         <form onSubmit={handleSubmit}>
           <CardHeader className='space-y-1'>
