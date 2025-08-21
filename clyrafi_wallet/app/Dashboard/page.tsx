@@ -26,7 +26,7 @@ export default function DashboardPage() {
         <div className='container mx-auto mt-10 mb-30'>
           <div className='text-center mb-20'>
             <h2 className='text-3xl md:text-4xl font-bold text-slate-900 mb-4 '>
-              Welcome to <span className='text-purple-800'>ClyraFi</span>
+              Welcome to <span className='text-purple-800 font-bold'>ClyraFi</span>
             </h2>
             <p className='text-lg text-slate-600 max-w-2xl mx-auto font-semibold'>
               Your business is in test mode

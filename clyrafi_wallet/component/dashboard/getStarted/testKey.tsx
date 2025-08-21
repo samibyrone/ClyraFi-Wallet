@@ -12,7 +12,6 @@ interface TestKeysModalProps {
 export default function TestKeysModal({ isOpen, onClose }: TestKeysModalProps) {
   const [copiedField, setCopiedField] = useState<string | null>(null)
 
-  // Sample test keys - in a real app, these would be generated
   const testKeys = {
     secret: "348736r83g385gdi3id6w4g643i6i34dttl6lt4dvtk",
     public: "348736r83g385gdi3id6w4g643i6i34dttl6lt4dvtk",
@@ -33,7 +32,6 @@ export default function TestKeysModal({ isOpen, onClose }: TestKeysModalProps) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4">
-        {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <div>
             <h2 className="text-xl font-semibold text-gray-900">Your test keys</h2>
@@ -44,9 +42,7 @@ export default function TestKeysModal({ isOpen, onClose }: TestKeysModalProps) {
           </Button>
         </div>
 
-        {/* Content */}
         <div className="p-6 space-y-6">
-          {/* Test secret */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-gray-700">Test secret</label>
             <div className="flex items-center space-x-2">
@@ -65,7 +61,6 @@ export default function TestKeysModal({ isOpen, onClose }: TestKeysModalProps) {
             </div>
           </div>
 
-          {/* Test public */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-gray-700">Test public</label>
             <div className="flex items-center space-x-2">

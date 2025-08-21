@@ -51,7 +51,6 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
     setWallets([...wallets, newWallet])
     setWalletName("")
 
-    // Add to API logs
     const logEntry: Transaction = {
       id: `log_${Date.now()}`,
       type: "wallet_created",
@@ -68,9 +67,9 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
     const sender = wallets.find((w) => w.id === senderWallet)
     const receiver = wallets.find((w) => w.id === receiverWallet)
 
-    if (!sender || !receiver || sender.balance < transferAmount) return
+    if (!sender || !receiver || sender.balance < transferAmount)
+       return
 
-    // Update wallet balances
     setWallets(
       wallets.map((wallet) => {
         if (wallet.id === senderWallet) {
@@ -83,7 +82,6 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
       }),
     )
 
-    // Add to API logs
     const logEntry: Transaction = {
       id: `log_${Date.now()}`,
       type: "transfer",
@@ -95,7 +93,6 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
     }
     setApiLogs([logEntry, ...apiLogs])
 
-    // Reset form
     setSenderWallet("")
     setReceiverWallet("")
     setAmount("")
@@ -146,11 +143,8 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
         </DialogHeader>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-6">
-          {/* Test wallets section */}
           <div className="space-y-6">
             <h3 className="text-lg font-medium">Test wallets</h3>
-
-            {/* Create new wallet */}
             <div className="space-y-4">
               <h4 className="font-medium">Create a new wallet test</h4>
               <div className="flex gap-3">
@@ -166,7 +160,6 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
               </div>
             </div>
 
-            {/* Your test wallets */}
             <div className="space-y-4">
               <h4 className="font-medium">Your test wallets</h4>
               <div className="space-y-3">
@@ -186,11 +179,9 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
             </div>
           </div>
 
-          {/* Simulate transactions section */}
           <div className="space-y-6">
             <h3 className="text-lg font-medium">Simulate transactions</h3>
 
-            {/* Create transaction form */}
             <div className="space-y-4">
               <h4 className="font-medium">Create a new wallet test</h4>
 
@@ -237,7 +228,6 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
               </div>
             </div>
 
-            {/* API Logs */}
             <div className="space-y-4">
               <h4 className="font-medium">API Logs</h4>
               <div className="bg-gray-50 rounded-lg p-4 max-h-48 overflow-y-auto">
