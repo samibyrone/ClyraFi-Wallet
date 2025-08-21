@@ -2,27 +2,16 @@
 
 import Link from "next/link";
 import { Route } from "next";
+import Image from "next/image";
 import { useState } from "react";
+import logo from "@/public/logo2.png";
 import { useAuth } from "@/hooks/use-auth";
 import { Input } from "@/component/ui/input";
 import { Label } from "@/component/ui/label";
 import { Button } from "@/component/ui/Button";
-import { Eye, EyeOff, Mail } from "lucide-react";
-import { RadioGroup, RadioGroupItem } from "@/component/ui/radio-group";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter
-} from "@/component/ui/card";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue
-} from "@/component/ui/select";
+import { Eye, EyeOff, Mail, Lock } from "lucide-react";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/component/ui/card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/component/ui/select";
 
 export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -36,30 +25,38 @@ export default function SignUpPage() {
     emailAddress: "",
     password: "",
     confirmPassword: "",
-    businessType: "",
-    softwareEngineer: "",
+    businessType: "", 
+    softwareEngineer: "", 
     acceptTerms: false
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Temporarily disable these checks for local storage testing
-    // if (!formData.acceptTerms) {
-    //   return;
-    // }
-    // if (!formData.starterBusiness || !formData.registeredBusiness) {
-    //   return;
-    // }
-    // if (!formData.softwareEngineer) {
-    //   return;
-    // }
+    if (!formData.acceptTerms) {
+      return;
+    }
+    if (!formData.businessType) {
+      return;
+    }
+    if (!formData.softwareEngineer) {
+      return;
+    }
     await signUp(formData);
   };
 
+    const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
   return (
-    <div className='min-h-screen flex items-center justify-center bg-purple-700'>
+    <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-[#6B3287] to-[#52027A]'>
       <div className='mt-20'>
-        <p className='font-bold text-xl'>ClyraFi</p>
+        <div className='flex items-center justify-center space-x-2 mb-6'>
+          <div className='w-10 h-10 bg-white rounded-lg flex items-center justify-center'>
+            <Image src={logo} alt='logo' className='w-7 h-7' />
+          </div>
+          <span className='text-2xl font-bold text-white'>ClyraFi</span>
+        </div>
         <Card className='w-full max-w-md mx-4 bg-white mt-5 mb-20'>
           <form onSubmit={handleSubmit}>
             <CardHeader className='space-y-1'>
@@ -77,9 +74,7 @@ export default function SignUpPage() {
                     setFormData({ ...formData, country: value })
                   }
                 >
-                  <SelectTrigger
-                  // className='w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-500'
-                  >
+                  <SelectTrigger>
                     <SelectValue placeholder='Select country' />
                   </SelectTrigger>
                   <SelectContent className='bg-white text-black font-medium hover:text-gray-900'>
@@ -103,7 +98,7 @@ export default function SignUpPage() {
                   id='business'
                   type='text'
                   placeholder='Enter business name'
-                  className='w-full px-3 py-2 border rounded-md'
+                  className='w-full px-3 py-2'
                   value={formData.businessName}
                   onChange={(e) =>
                     setFormData({ ...formData, businessName: e.target.value })
@@ -119,7 +114,7 @@ export default function SignUpPage() {
                   id='firstname'
                   type='text'
                   placeholder='Enter first name'
-                  className='w-full px-3 py-2 border rounded-md'
+                  className='w-full px-3 py-2'
                   value={formData.firstName}
                   onChange={(e) =>
                     setFormData({ ...formData, firstName: e.target.value })
@@ -135,7 +130,7 @@ export default function SignUpPage() {
                   id='lastname'
                   type='text'
                   placeholder='Enter last name'
-                  className='w-full px-3 py-2 border rounded-md'
+                  className='w-full px-3 py-2'
                   value={formData.lastName}
                   onChange={(e) =>
                     setFormData({ ...formData, lastName: e.target.value })
@@ -151,7 +146,7 @@ export default function SignUpPage() {
                   id='phone'
                   type='text'
                   placeholder='Enter phone number'
-                  className='w-full px-3 py-2 border rounded-md'
+                  className='w-full px-3 py-2'
                   value={formData.phoneNumber}
                   onChange={(e) =>
                     setFormData({ ...formData, phoneNumber: e.target.value })
@@ -169,7 +164,7 @@ export default function SignUpPage() {
                     id='email'
                     type='email'
                     placeholder='@example.com'
-                    className='w-full px-3 py-2 pl-10   border rounded-md'
+                    className='w-full px-3 py-2 pl-10'
                     value={formData.emailAddress}
                     onChange={(e) =>
                       setFormData({ ...formData, emailAddress: e.target.value })
@@ -182,31 +177,23 @@ export default function SignUpPage() {
                 <Label htmlFor='password' className='text-sm font-medium'>
                   Password
                 </Label>
-                <div className='relative'>
+                <div className="relative">
                   <Input
-                    id='password'
-                    type='password'
-                    placeholder='zry2fkqwjQz'
-                    className='w-full px-3 py-2 border rounded-md'
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Enter your password"
+                    className="w-full px-3 py-2"
                     value={formData.password}
-                    onChange={(e) =>
-                      setFormData({ ...formData, password: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, password: e.target.value})}
                     required
                   />
-                  <Button
-                    type='button'
-                    variant='ghost'
-                    size='icon'
-                    className='absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8'
+                  <button
+                    type="button"
                     onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                   >
-                    {showPassword ? (
-                      <EyeOff className='h-4 w-4' />
-                    ) : (
-                      <Eye className='h-4 w-4' />
-                    )}
-                  </Button>
+                    {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  </button>
                 </div>
               </div>
               <div className='space-y-2'>
@@ -218,105 +205,90 @@ export default function SignUpPage() {
                 </Label>
                 <div className='relative'>
                   <Input
-                    id='confirm-password'
-                    type='password'
-                    placeholder='zry2fkqwjQz'
-                    className='w-full px-3 py-2 border rounded-md'
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Confirm your password"
+                    className="w-full px-3 py-2"
                     value={formData.confirmPassword}
-                    onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        confirmPassword: e.target.value
-                      })
-                    }
+                    onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value})}
                     required
                   />
-                  <Button
+                  <button
                     type='button'
-                    variant='ghost'
-                    size='icon'
-                    className='absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8'
                     onClick={() => setShowPassword(!showPassword)}
+                    className='absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600'
                   >
                     {showPassword ? (
-                      <EyeOff className='h-4 w-4' />
+                      <EyeOff className='w-5 h-5' />
                     ) : (
-                      <Eye className='h-4 w-4' />
+                      <Eye className='w-5 h-5' />
                     )}
-                  </Button>
+                  </button>
                 </div>
               </div>
               <div className='space-y-4'>
                 <Label>What type of business do you own?</Label>
-                <RadioGroup
-                  value={formData.businessType}
-                  onValueChange={(value: string) =>
-                    setFormData({ ...formData, businessType: value })
-                  }
-                  className='space-y-4'
-                >
-                  <div className='flex items-start space-x-3 p-4 hover:bg-gray-50'>
-                    <RadioGroupItem
-                      value='starter'
-                      id='starter'
-                      className='mt-1'
-                    />
-                    <div className='flex-1'>
-                      <Label
-                        htmlFor='starter'
-                        className='font-medium cursor-pointer'
-                      >
-                        Starter business
-                      </Label>
-                      <p className='text-sm text-gray-600 mt-1'>
-                        I'm testing my ideas with real customers, and preparing
-                        to register my company
-                      </p>
-                    </div>
+                <div className="space-y-3">
+                    <label className="flex items-start space-x-3 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="businessType"
+                        value="starter"
+                        checked={formData.businessType === 'starter'}
+                        onChange={(e) => handleInputChange('businessType', e.target.value)}
+                        className="mt-1 w-4 h-4 text-purple-600 border-gray-300 focus:ring-purple-500"
+                      />
+                      <div>
+                        <div className="font-medium text-gray-900">Starter business</div>
+                        <div className="text-sm text-gray-500">
+                          I'm testing my ideas with real customers, and preparing to register my company
+                        </div>
+                      </div>
+                    </label>
+                    <label className="flex items-start space-x-3 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="businessType"
+                        value="registered"
+                        checked={formData.businessType === 'registered'}
+                        onChange={(e) => handleInputChange('businessType', e.target.value)}
+                        className="mt-1 w-4 h-4 text-purple-600 border-gray-300 focus:ring-purple-500"
+                      />
+                      <div>
+                        <div className="font-medium text-gray-900">Registered business</div>
+                        <div className="text-sm text-gray-500">
+                          My business has the approval, documentation, and licences required to operate legally
+                        </div>
+                      </div>
+                    </label>
                   </div>
-                  <div className='flex items-start space-x-3 p-4 hover:bg-gray-50'>
-                    <RadioGroupItem
-                      value='registered'
-                      id='registered'
-                      className='mt-1'
-                    />
-                    <div className='flex-1'>
-                      <Label
-                        htmlFor='registered'
-                        className='font-medium cursor-pointer'
-                      >
-                        Registered business
-                      </Label>
-                      <p className='text-sm text-gray-600 mt-1'>
-                        My business has the approval, documentation, and
-                        licences required to operate legally
-                      </p>
-                    </div>
-                  </div>
-                </RadioGroup>
               </div>
               <div className='space-y-4'>
                 <Label>Are you a software developer?</Label>
-                <RadioGroup
-                  value={formData.softwareEngineer}
-                  onValueChange={(value: string) =>
-                    setFormData({ ...formData, softwareEngineer: value })
-                  }
-                  className='flex space-x-6'
-                >
-                  <div className='flex items-center space-x-2'>
-                    <RadioGroupItem value='yes' id='yes' />
-                    <Label htmlFor='yes' className='cursor-pointer'>
-                      Yes, I am
-                    </Label>
+                <div className="flex space-x-6">
+                    <label className="flex items-center space-x-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="softwareEngineer"
+                        value="yes"
+                        checked={formData.softwareEngineer === 'yes'}
+                        onChange={(e) => handleInputChange('softwareEngineer', e.target.value)}
+                        className="w-4 h-4 text-purple-600 border-gray-300 focus:ring-purple-500"
+                      />
+                      <span className="text-sm text-gray-900">Yes, I am</span>
+                    </label>
+                    <label className="flex items-center space-x-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="softwareEngineer"
+                        value="no"
+                        checked={formData.softwareEngineer === 'no'}
+                        onChange={(e) => handleInputChange('softwareEngineer', e.target.value)}
+                        className="w-4 h-4 text-purple-600 border-gray-300 focus:ring-purple-500"
+                      />
+                      <span className="text-sm text-gray-900">No, I am not</span>
+                    </label>
                   </div>
-                  <div className='flex items-center space-x-2'>
-                    <RadioGroupItem value='no' id='no' />
-                    <Label htmlFor='no' className='cursor-pointer'>
-                      No, I am not
-                    </Label>
-                  </div>
-                </RadioGroup>
               </div>
               <div className='flex items-center space-x-2'>
                 <Input
@@ -336,14 +308,14 @@ export default function SignUpPage() {
                   I agree to the{" "}
                   <Link
                     href={"/terms" as Route}
-                    className='text-primary hover:underline'
+                    className='text-purple-500 hover:underline'
                   >
                     Terms of Service
                   </Link>{" "}
                   and{" "}
                   <Link
                     href={"/privacy" as Route}
-                    className='text-primary hover:underline'
+                    className='text-purple-500 hover:underline'
                   >
                     Privacy Policy
                   </Link>
@@ -353,8 +325,7 @@ export default function SignUpPage() {
             <CardFooter className='flex flex-col space-y-4'>
               <Button
                 type='submit'
-                className='w-full bg-purple-700 text-white font-medium'
-                // variant='gradient'
+                className='w-full bg-purple-700 text-white font-semibold'
                 disabled={loading}
               >
                 {loading ? "Creating Account..." : "Create Account"}
@@ -363,7 +334,7 @@ export default function SignUpPage() {
                 Already have an account?{" "}
                 <Link
                   href='/Auth/login'
-                  className='text-primary hover:text-gray-500 text-black'
+                  className='text-primary hover:text-black text-purple-500 font-semibold'
                 >
                   Sign in
                 </Link>
@@ -371,6 +342,11 @@ export default function SignUpPage() {
             </CardFooter>
           </form>
         </Card>
+         <div className='text-center mb-10'>
+          <Link href='/' className='text-sm text-white hover:text-gray-400'>
+            ← Back to home
+          </Link>
+        </div>
       </div>
     </div>
   );
