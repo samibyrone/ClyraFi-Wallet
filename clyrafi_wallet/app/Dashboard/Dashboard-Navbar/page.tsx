@@ -1,14 +1,16 @@
 import Link from "next/link";
-import { Bell, ChevronDown, User, UserCircle } from "lucide-react";
-import { Button } from "../../../component/ui/Button";
+import Image from "next/image";
+import logo from "@/public/logo2.png";
+import { Button } from "@/component/ui/Button";
 import { Popover, PopoverTrigger } from "@/component/ui/popover";
+import { Bell, ChevronDown, User, UserCircle } from "lucide-react";
 
 export default function Dashbar() {
   return (
     <header className='w-full px-4 py-6 md:px-6 lg:px-8 bg-gray-100'>
       <div className='mx-auto flex max-w-7xl items-center justify-between'>
         <div className='flex items-center space-x-2'>
-          <div className='h-8 w-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500'></div>
+          <Image src={logo} alt="logo" className="w-6 h-6"/>
           <span className='text-xl font-bold text-gray-900'>ClyraFi</span>
         </div>
         <div className='flex gap-4'>

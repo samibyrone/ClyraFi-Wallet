@@ -1,4 +1,4 @@
-export const customers = [
+export const wallets = [
   {
     id: "CUST001",
     name: "John Doe",

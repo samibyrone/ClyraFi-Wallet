@@ -13,7 +13,6 @@ export async function handleApiResponse<T>(
   const json = (await response.json()) as ApiResponse<T>;
 
   if (!response.ok) {
-    // Handle different error types
     if (response.status === 401) {
       if (
         json?.code === 'INVALID_CREDENTIALS' ||

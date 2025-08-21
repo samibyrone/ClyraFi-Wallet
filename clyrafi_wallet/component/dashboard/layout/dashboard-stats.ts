@@ -9,7 +9,7 @@ export const navigationItems = [
 
 export const paymentItems = [
   { name: "Transactions", icon: CreditCard, href: "/Dashboard/Transactions" },
-  { name: "Customers", icon: Users, href: "/Dashboard/Customer" },
+  { name: "Wallets", icon: Users, href: "/Dashboard/Wallets" },
   { name: "Refunds", icon: RefreshCw, href: "/Dashboard/Refunds" },
   { name: "Payouts", icon: DollarSign, href: "/Dashboard/Payouts" },
   { name: "Disputes", icon: AlertTriangle, href: "/Dashboard/Disputes" },

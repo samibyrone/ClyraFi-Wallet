@@ -14,7 +14,7 @@ export default function FeaturesSection() {
 
             <div className="space-y-8">
               {features.map((feature, index) => (
-                <div key={index} className="border-l-2 border-purple-500 pl-8">
+                <div key={index} className="border-l-2 border-purple-700 pl-8">
                   <h3 className="mb-3 text-xl font-semibold text-gray-900">{feature.title}</h3>
                   <p className="text-lg text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>

@@ -22,7 +22,6 @@ export default function TransactionsPage() {
           </div>
         </div>
 
-        {/* Filters */}
         <Card>
           <CardContent className="p-4">
             <div className="flex flex-col md:flex-row gap-4">
@@ -62,7 +61,6 @@ export default function TransactionsPage() {
           </CardContent>
         </Card>
 
-        {/* Transactions Table */}
         <Card>
           <CardHeader>
             <CardTitle>All Transactions</CardTitle>
@@ -135,5 +133,5 @@ export default function TransactionsPage() {
         </Card>
       </div>
     </DashboardLayout>
-  )
-}
+  );
+};

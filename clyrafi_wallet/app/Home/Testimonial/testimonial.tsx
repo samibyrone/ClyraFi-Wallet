@@ -17,7 +17,7 @@ export default function TestimonialsSection() {
             <div key={index} className="rounded-lg bg-white p-8 shadow-sm">
               <blockquote className="mb-6 text-lg text-gray-700">"{testimonial.quote}"</blockquote>
               <div className="flex items-center">
-                <Avatar className="mr-4 h-12 w-12 bg-purple-500">
+                <Avatar className="mr-4 h-12 w-12 bg-purple-800">
                   <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.author} />
                   <AvatarFallback>
                     {testimonial.author
@@ -37,7 +37,7 @@ export default function TestimonialsSection() {
 
         <div className="mt-8 flex justify-center">
           <div className="flex space-x-2">
-            <div className="h-2 w-2 rounded-full bg-purple-500"></div>
+            <div className="h-2 w-2 rounded-full bg-purple-800"></div>
             <div className="h-2 w-2 rounded-full bg-gray-300"></div>
             <div className="h-2 w-2 rounded-full bg-gray-300"></div>
           </div>
