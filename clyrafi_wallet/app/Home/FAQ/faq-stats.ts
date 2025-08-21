@@ -1,6 +1,6 @@
 export const faqs = [
     {
-      question: "Do I need a license to use ClyariFi?",
+      question: "Do I need a license to use ClyraFi?",
       answer:
         "No, We provide the infrastructure. You handle end-user compliance based on your local laws. KYB/KYC",
     },
@@ -30,8 +30,8 @@ export const faqs = [
         "Our onboarding is streamlined and typically takes 24-48 hours. We provide dedicated support throughout the process.",
     },
     {
-      question: "What makes ClyariFi different?",
+      question: "What makes ClyraFi different?",
       answer:
-        "ClyariFi is built specifically for African markets with local payment methods, currencies, and regulatory compliance built-in.",
+        "ClyraFi is built specifically for African markets with local payment methods, currencies, and regulatory compliance built-in.",
     },
   ]

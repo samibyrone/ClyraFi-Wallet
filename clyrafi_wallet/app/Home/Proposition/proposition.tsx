@@ -19,7 +19,7 @@ export default function Proposition() {
           <div className='h-120 w-108 mt-15 ml-10 items-center'>
             <div className='rounded-2xl'>
               <h3 className='mb-5 mt-5 text-3xl font-semibold leading-relaxed text-gray-900'>
-                ClyariFi is a Wallet-as-a-Service platform that lets you create,
+                ClyraFi is a Wallet-as-a-Service platform that lets you create,
                 manage, and control wallets across both fiat and blockchain
                 rails, using powerful APIs.
               </h3>

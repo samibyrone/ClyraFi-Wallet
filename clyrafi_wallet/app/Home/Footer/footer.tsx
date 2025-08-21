@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import logo from "@/public/logo2.png";
 import { footerSections } from "./footer-stats";
 
 export default function Footer() {
@@ -8,7 +10,7 @@ export default function Footer() {
         <div className='grid md:grid-cols-4 mt-20'>
           <div className='md:col-span-2'>
             <div className='mb-4 flex items-center space-x-2'>
-              <div className='h-8 w-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500'></div>
+              <Image src={logo} alt="logo" className="w-6 h-6"/>
               <span className='text-xl font-bold'>ClyraFi</span>
             </div>
             <p className='mb-4 text-gray-400 w-95'>
@@ -37,9 +39,9 @@ export default function Footer() {
         </div>
         <div className='border border-gray-500 w-320 h-0.5 bg-gray-700 mt-20'></div>
         <p className='text-sm text-gray-500 mt-10 ml-120'>
-          ©Copyright 2025 ClyariFi. All rights reserved by ClyraFi.
+          ©Copyright 2025 ClyraFi. All rights reserved by ClyraFi.
         </p>
       </div>
     </footer>
   );
-}
+};
