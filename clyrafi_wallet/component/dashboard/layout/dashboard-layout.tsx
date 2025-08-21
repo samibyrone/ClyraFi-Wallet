@@ -69,7 +69,16 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           </DropdownMenu>
         </div>
 
-        <nav className="flex-1 w-full overflow-y-auto overflow-x-hidden py-4">
+        <nav className="flex-1 overflow-y-auto scrollbar-hide py-4" style={{
+            scrollbarWidth: "none" /* Firefox */,
+            msOverflowStyle: "none" /* Internet Explorer 10+ */,
+          }}
+        >
+          <style jsx>{`
+            .scrollbar-hide::-webkit-scrollbar {
+              display: none; /* Safari and Chrome */
+            }
+          `}</style>
           <div className="px-4 space-y-1">
             {navigationItems.map((item) => (
               <a

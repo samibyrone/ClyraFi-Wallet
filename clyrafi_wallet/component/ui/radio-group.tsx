@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { cn } from "@/lib/utils" // Assuming lib/utils exists and exports cn
+import * as React from "react";
+import { cn } from "@/lib/utils";
 
 const RadioGroupContext = React.createContext<{
-  value: string
-  onValueChange: (value: string) => void
-} | null>(null)
+  value: string;
+  onValueChange: (value: string) => void;
+} | null>(null);
 
 export function useRadioGroup() {
-  const context = React.useContext(RadioGroupContext)
+  const context = React.useContext(RadioGroupContext);
   if (!context) {
-    throw new Error("useRadioGroup must be used within a RadioGroupProvider")
+    throw new Error("useRadioGroup must be used within a RadioGroupProvider");
   }
-  return context
+  return context;
 }
 
 export function RadioGroup({
@@ -32,7 +32,7 @@ export function RadioGroup({
         {...props}
       />
     </RadioGroupContext.Provider>
-  )
+  );
 }
 
 export function RadioGroupItem({
@@ -41,7 +41,7 @@ export function RadioGroupItem({
   id,
   ...props
 }: React.ComponentPropsWithoutRef<"div"> & { value: string; id: string }) {
-  const { value: contextValue, onValueChange } = useRadioGroup()
+  const { value: contextValue, onValueChange } = useRadioGroup();
   const checked = contextValue === value;
 
   return (
@@ -55,24 +55,37 @@ export function RadioGroupItem({
       onClick={() => onValueChange(value)}
       {...props}
     >
-      <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
-        <div className="h-2.5 w-2.5 rounded-full bg-current" />
+      <RadioGroupPrimitive.Indicator className='flex items-center justify-center'>
+        <div className='h-2.5 w-2.5 rounded-full bg-current' />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
-  )
+  );
 }
 
-// In a real scenario, RadioGroupPrimitive would be imported from a library like shadcn/ui or @radix-ui/react-radio-group.
-// For demonstration purposes, we'll create a mock implementation.
 const RadioGroupPrimitive = {
-  Root: ({ children, value, onValueChange, ...props }: React.ComponentPropsWithoutRef<"div"> & { value?: string; onValueChange?: (value: string) => void; }) => <div {...props}>{children}</div>,
-  Item: React.forwardRef<
-    HTMLDivElement,
-    React.ComponentPropsWithoutRef<"div">
-  >(({ children, ...props }, ref) => (
-    <div ref={ref} role="radio" aria-checked={props['aria-checked']} {...props}>
-      {children}
-    </div>
-  )),
-  Indicator: ({ children, ...props }: React.ComponentPropsWithoutRef<"div">) => <div {...props}>{children}</div>,
+  Root: ({
+    children,
+    value,
+    onValueChange,
+    ...props
+  }: React.ComponentPropsWithoutRef<"div"> & {
+    value?: string;
+    onValueChange?: (value: string) => void;
+  }) => <div {...props}>{children}</div>,
+  Item: React.forwardRef<HTMLDivElement, React.ComponentPropsWithoutRef<"div">>(
+    ({ children, ...props }, ref) => (
+      <div
+        ref={ref}
+        role='radio'
+        aria-checked={props["aria-checked"]}
+        {...props}
+      >
+        {children}
+      </div>
+    )
+  ),
+  Indicator: ({
+    children,
+    ...props
+  }: React.ComponentPropsWithoutRef<"div">) => <div {...props}>{children}</div>
 };

@@ -1,6 +1,6 @@
 import { Button } from "@/component/ui/Button"
-import { DashboardLayout } from "@/component/dashboard/layout/dashboard-layout"
 import { Card, CardContent, CardHeader, CardTitle } from "@/component/ui/card"
+import { DashboardLayout } from "@/component/dashboard/layout/dashboard-layout"
 import { ArrowUpRight, ArrowDownRight, DollarSign, Users, CreditCard, TrendingUp } from "lucide-react"
 
 export default function HomePage() {
@@ -9,15 +9,14 @@ export default function HomePage() {
       <div className="p-6 space-y-6">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-semibold text-gray-900">Dashboard Overview</h1>
-          <Button className="bg-purple-600 hover:bg-purple-700">
+          <Button className="bg-purple-700 hover:bg-purple-900 text-white">
             <ArrowUpRight className="w-4 h-4 mr-2" />
             Quick Action
           </Button>
         </div>
 
-        {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow border-none">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-gray-600">Total Revenue</CardTitle>
               <DollarSign className="h-4 w-4 text-gray-400" />
@@ -31,7 +30,7 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow border-none">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-gray-600">Active Customers</CardTitle>
               <Users className="h-4 w-4 text-gray-400" />
@@ -45,7 +44,7 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow border-none">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-gray-600">Transactions</CardTitle>
               <CreditCard className="h-4 w-4 text-gray-400" />
@@ -59,7 +58,7 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow border-none">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-gray-600">Success Rate</CardTitle>
               <TrendingUp className="h-4 w-4 text-gray-400" />
@@ -74,9 +73,8 @@ export default function HomePage() {
           </Card>
         </div>
 
-        {/* Recent Activity */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow border-none">
             <CardHeader>
               <CardTitle>Recent Transactions</CardTitle>
             </CardHeader>
@@ -88,7 +86,7 @@ export default function HomePage() {
                   { id: "TXN003", amount: "₦78,900", customer: "Mike Johnson", status: "Success", time: "8 mins ago" },
                   { id: "TXN004", amount: "₦23,400", customer: "Sarah Wilson", status: "Failed", time: "12 mins ago" },
                 ].map((transaction) => (
-                  <div key={transaction.id} className="flex items-center justify-between py-2 border-b last:border-b-0">
+                  <div key={transaction.id} className="flex items-center justify-between py-2 hover:shadow-lg transition-shadow border-none">
                     <div className="flex-1">
                       <p className="font-medium text-sm">{transaction.customer}</p>
                       <p className="text-xs text-gray-500">
@@ -115,25 +113,25 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow border-none">
             <CardHeader>
               <CardTitle>Quick Actions</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                <Button variant="outline" className="w-full justify-start bg-transparent">
+                <Button variant="outline" className="w-full justify-start bg-transparent hover:shadow-lg transition-shadow border-none bg-purple-100">
                   <CreditCard className="w-4 h-4 mr-2" />
                   Create Payment Link
                 </Button>
-                <Button variant="outline" className="w-full justify-start bg-transparent">
+                <Button variant="outline" className="w-full justify-start bg-transparent hover:shadow-lg transition-shadow border-none bg-purple-100">
                   <Users className="w-4 h-4 mr-2" />
                   Add New Customer
                 </Button>
-                <Button variant="outline" className="w-full justify-start bg-transparent">
+                <Button variant="outline" className="w-full justify-start bg-transparent hover:shadow-lg transition-shadow border-none bg-purple-100">
                   <DollarSign className="w-4 h-4 mr-2" />
                   Process Refund
                 </Button>
-                <Button variant="outline" className="w-full justify-start bg-transparent">
+                <Button variant="outline" className="w-full justify-start bg-transparent hover:shadow-lg transition-shadow border-none bg-purple-100">
                   <TrendingUp className="w-4 h-4 mr-2" />
                   View Analytics
                 </Button>

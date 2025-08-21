@@ -11,7 +11,6 @@ interface ApiDocsModalProps {
 
 export default function ApiDocsModal({ isOpen, onClose }: ApiDocsModalProps) {
   const handleGoToDocs = () => {
-    // Open documentation in new tab
     window.open("https://docs.clyarafi.com", "_blank")
     onClose()
   }

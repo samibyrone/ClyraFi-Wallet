@@ -13,32 +13,30 @@ export default function WalletsPage() {
       <div className="p-6 space-y-6">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-semibold text-gray-900">Wallets</h1>
-          <Button className="bg-purple-600 hover:bg-purple-700">
+          <Button className="bg-purple-800 hover:bg-purple-600 text-white font-semibold">
             <Plus className="w-4 h-4 mr-2" />
             Add Wallet
           </Button>
         </div>
 
-        {/* Search and Stats */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <div className="lg:col-span-3">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+            <div className="relative hover:shadow-lg transition-shadow border-none">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4"/>
               <Input placeholder="Search customers by name, email, or phone..." className="pl-10" />
             </div>
           </div>
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow border-none">
             <CardContent className="p-4">
               <div className="text-center">
                 <p className="text-2xl font-bold text-purple-600">1,234</p>
-                <p className="text-sm text-gray-600">Total Wallets</p>
+                <p className="text-sm text-gray-600 font-semibold">Total Wallets</p>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* Customers List */}
-        <Card>
+        <Card className="hover:shadow-lg transition-shadow border-none">
           <CardHeader>
             <CardTitle>All Wallets</CardTitle>
           </CardHeader>
@@ -47,7 +45,7 @@ export default function WalletsPage() {
               {wallets.map((wallets) => (
                 <div
                   key={wallets.id}
-                  className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50"
+                  className="flex items-center justify-between p-4 rounded-lg hover:bg-gray-50 hover:shadow-lg transition-shadow border-none"
                 >
                   <div className="flex items-center space-x-4">
                     <Avatar className="w-12 h-12">
