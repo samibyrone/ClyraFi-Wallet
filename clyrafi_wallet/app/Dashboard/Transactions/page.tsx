@@ -1,7 +1,7 @@
 import { Badge } from "@/component/ui/badge"
-import { Input } from "@/component/ui/input"
-import { Button } from "@/component/ui/Button"
+import { Button } from "@/component/ui/button"
 import { transactions } from "./transaction-stats"
+import { Textarea } from "@/components/ui/textarea"
 import { Search, Filter, Download, Eye } from "lucide-react"
 import { DashboardLayout } from "@/component/dashboard/layout/dashboard-layout"
 import { Card, CardContent, CardHeader, CardTitle } from "@/component/ui/card"
@@ -28,7 +28,7 @@ export default function TransactionsPage() {
               <div className="flex-1 hover:shadow-lg transition-shadow border-none">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                  <Input placeholder="Search transactions..." className="pl-10" />
+                  <Textarea placeholder="Search transactions..." className="pl-10" />
                 </div>
               </div>
               <Select>

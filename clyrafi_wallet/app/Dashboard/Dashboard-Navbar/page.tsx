@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/public/logo2.png";
-import { Button } from "@/component/ui/Button";
+import { Button } from "@/component/ui/button";
 import { useUser } from "@/component/user-context"
 import { Avatar, AvatarFallback } from "@/component/ui/avatar";
 import { Bell, ChevronDown, LogOut, User } from "lucide-react";
@@ -15,11 +15,7 @@ export default function Dashbar() {
   return (
     <div>
       <header className='w-full px-4 py-6 md:px-6 lg:px-8 bg-gray-100'>
-        <div className='mx-auto flex max-w-7xl items-center justify-between'>
-          <div className='flex items-center space-x-2'>
-            <Image src={logo} alt='logo' className='w-6 h-6' />
-            <span className='text-xl font-bold text-gray-900'>ClyraFi</span>
-          </div>
+        <div className='mx-auto flex items-center justify-end'>
           <div className='flex gap-4'>
             <Link href=''>
               <Button className='rounded-full bg-red-100 text-black hover:bg-red-200 font-semibold'>
@@ -28,7 +24,7 @@ export default function Dashbar() {
               </Button>
             </Link>
             <Link href={""}>
-              <Button size='icon' className='hover:text-purple-500'>
+              <Button size='icon' className='hover:text-purple-600'>
                 <span className='absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full'></span>
                 <Bell className='h-5 w-5' />
               </Button>

@@ -7,15 +7,9 @@ import logo from "@/public/logo2.png";
 import { useAuth } from "@/hooks/use-auth";
 import { Input } from "@/component/ui/input";
 import { Label } from "@/component/ui/label";
-import { Button } from "@/component/ui/Button";
+import { Button } from "@/component/ui/button";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter
-} from "@/component/ui/card";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/component/ui/card";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -34,6 +28,11 @@ export default function LoginPage() {
 
   return (
     <div className='min-h-screen flex items-center justify-center  bg-gradient-to-br from-[#6B3287] to-[#52027A]'>
+        <div className='text-center'>
+          <Link href='/' className='text-sm text-white hover:text-gray-400'>
+            ← Back to home
+          </Link>
+        </div>
       <div className='max-w-md w-full space-y-8'>
         <div className='text-center'>
           <div className='flex items-center justify-center space-x-2 mb-6'>
@@ -44,7 +43,7 @@ export default function LoginPage() {
           </div>
           <h2 className='text-3xl font-bold text-white'>Welcome back.</h2>
         </div>
-        <Card className='w-full max-w-md mx-4 bg-white'>
+        <Card className='w-full max-w-sm mx-4'>
           <form onSubmit={handleSubmit}>
             <CardHeader className='space-y-1'>
               <CardTitle className='text-2xl font-bold'>
@@ -62,7 +61,7 @@ export default function LoginPage() {
                     id='email'
                     type='email'
                     placeholder='@example.com'
-                    className='w-full px-3 py-2 pl-10 bg-white'
+                    className='w-full px-3 py-2 pl-10'
                     value={formData.emailAddress}
                     onChange={(e) =>
                       setFormData({ ...formData, emailAddress: e.target.value })
@@ -81,7 +80,7 @@ export default function LoginPage() {
                     id='password'
                     type={showPassword ? "text" : "password"}
                     placeholder='Enter your password'
-                    className='pl-10 pr-10 bg-white'
+                    className='pl-10 pr-10'
                     value={formData.password}
                     onChange={(e) =>
                       setFormData({ ...formData, password: e.target.value })
@@ -118,7 +117,7 @@ export default function LoginPage() {
                 </div>
                 <Link
                   href='/Auth/forgot-password'
-                  className='text-primary hover:text-purple-500 text-black'
+                  className='hover:text-purple-500 text-black'
                 >
                   Forgot password?
                 </Link>
@@ -136,7 +135,7 @@ export default function LoginPage() {
                 Don't have an account?{" "}
                 <Link
                   href='/Auth/signup'
-                  className='text-primary hover:text-black text-purple-500 font-semibold'
+                  className='hover:text-black text-purple-500 font-semibold'
                 >
                   Create an account
                 </Link>
@@ -144,11 +143,6 @@ export default function LoginPage() {
             </CardFooter>
           </form>
         </Card>
-        <div className='text-center'>
-          <Link href='/' className='text-sm text-white hover:text-gray-400'>
-            ← Back to home
-          </Link>
-        </div>
       </div>
     </div>
   );

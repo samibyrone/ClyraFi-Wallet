@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Input } from "@/component/ui/input";
 import { Label } from "@/component/ui/label";
-import { Button } from "@/component/ui/Button";
+import { Button } from "@/component/ui/button";
 import { useUser } from "@/component/user-context";
 import { Separator } from "@/component/ui/separator";
 import { User, Shield, Bell, CreditCard } from "lucide-react";

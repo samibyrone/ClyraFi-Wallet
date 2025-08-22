@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Button } from "@/component/ui/Button";
+import { Button } from "@/component/ui/button";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/component/ui/card";
 
 export default function ForgotPasswordPage() {

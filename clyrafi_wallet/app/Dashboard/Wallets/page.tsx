@@ -1,7 +1,7 @@
 import { wallets } from "./wallets-stats"
 import { Badge } from "@/component/ui/badge"
 import { Input } from "@/component/ui/input"
-import { Button } from "@/component/ui/Button"
+import { Button } from "@/component/ui/button"
 import { Avatar, AvatarFallback } from "@/component/ui/avatar"
 import { DashboardLayout } from "@/component/dashboard/layout/dashboard-layout"
 import { Search, Plus, Mail, Phone, Eye, MoreHorizontal } from "lucide-react"

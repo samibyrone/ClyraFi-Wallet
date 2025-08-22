@@ -1,4 +1,4 @@
-import { Button } from "@/component/ui/Button"
+import { Button } from "@/component/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/component/ui/card"
 import { DashboardLayout } from "@/component/dashboard/layout/dashboard-layout"
 import { ArrowUpRight, ArrowDownRight, DollarSign, Users, CreditCard, TrendingUp } from "lucide-react"

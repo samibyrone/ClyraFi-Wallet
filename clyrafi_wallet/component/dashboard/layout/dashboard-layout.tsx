@@ -3,7 +3,7 @@
 import Image from "next/image";
 import logo from "@/public/logo2.png";
 import React, { useState } from "react";
-import { Button } from "@/component/ui/Button";
+import { Button } from "@/component/ui/button";
 import { useUser } from "@/component/user-context";
 import { Avatar, AvatarFallback } from "@/component/ui/avatar";
 import { ChevronDown, ChevronRight, LogOut, User } from "lucide-react";
@@ -22,8 +22,8 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
   return (
     <div className="flex h-screen bg-gray-50">
-      <div className="w-64 bg-purple-900 text-white flex flex-col">
-        <div className="p-6 border-b border-purple-800">
+      <div className="w-64 bg-purple-950 text-white flex flex-col">
+        <div className="p-6 border-b border-purple-950">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
               <Image src={logo} alt="logo" className="w-6 h-6"/>
@@ -32,7 +32,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           </div>
         </div>
 
-        <div className="p-4 border-b border-purple-800">
+        <div className="p-4 border-b border-purple-950">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="w-full justify-start p-0 h-auto hover:bg-purple-800">

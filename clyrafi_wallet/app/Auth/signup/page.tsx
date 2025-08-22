@@ -8,7 +8,7 @@ import logo from "@/public/logo2.png";
 import { useAuth } from "@/hooks/use-auth";
 import { Input } from "@/component/ui/input";
 import { Label } from "@/component/ui/label";
-import { Button } from "@/component/ui/Button";
+import { Button } from "@/component/ui/button";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/component/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/component/ui/select";
@@ -50,6 +50,11 @@ export default function SignUpPage() {
 
   return (
     <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-[#6B3287] to-[#52027A]'>
+        <div className='text-center mb-300'>
+          <Link href='/' className='text-sm text-white hover:text-gray-400'>
+            ← Back to home
+          </Link>
+        </div>
       <div className='mt-20'>
         <div className='flex items-center justify-center space-x-2 mb-6'>
           <div className='w-10 h-10 bg-white rounded-lg flex items-center justify-center'>
@@ -57,7 +62,7 @@ export default function SignUpPage() {
           </div>
           <span className='text-2xl font-bold text-white'>ClyraFi</span>
         </div>
-        <Card className='w-full max-w-md mx-4 bg-white mt-5 mb-20'>
+        <Card className='w-full max-w-sm mx-4 bg-white mt-5 mb-20'>
           <form onSubmit={handleSubmit}>
             <CardHeader className='space-y-1'>
               <CardTitle className='text-2xl font-bold'>
@@ -178,11 +183,12 @@ export default function SignUpPage() {
                   Password
                 </Label>
                 <div className="relative">
+                  <Lock className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5' />
                   <Input
                     id="password"
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter your password"
-                    className="w-full px-3 py-2"
+                    className='pl-10 pr-10'
                     value={formData.password}
                     onChange={(e) => setFormData({ ...formData, password: e.target.value})}
                     required
@@ -204,11 +210,12 @@ export default function SignUpPage() {
                   Confirm Password
                 </Label>
                 <div className='relative'>
+                  <Lock className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5' />
                   <Input
                     id="password"
                     type={showPassword ? "text" : "password"}
                     placeholder="Confirm your password"
-                    className="w-full px-3 py-2"
+                    className='pl-10 pr-10'
                     value={formData.confirmPassword}
                     onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value})}
                     required
@@ -334,7 +341,7 @@ export default function SignUpPage() {
                 Already have an account?{" "}
                 <Link
                   href='/Auth/login'
-                  className='text-primary hover:text-black text-purple-500 font-semibold'
+                  className='hover:text-black text-purple-500 font-semibold'
                 >
                   Sign in
                 </Link>
@@ -342,11 +349,6 @@ export default function SignUpPage() {
             </CardFooter>
           </form>
         </Card>
-         <div className='text-center mb-10'>
-          <Link href='/' className='text-sm text-white hover:text-gray-400'>
-            ← Back to home
-          </Link>
-        </div>
       </div>
     </div>
   );

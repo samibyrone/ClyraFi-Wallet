@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "@/component/ui/Button";
+import { Button } from "@/component/ui/button";
 import { features } from "@/app/Home/Features/features-stats";
 
 export default function FeaturesSection() {

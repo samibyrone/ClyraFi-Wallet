@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Dashbar from "./Dashboard-Navbar/page";
-import { Button } from "@/component/ui/Button";
+import { Button } from "@/component/ui/button";
 import { Server, WalletCardsIcon, FileText } from "lucide-react";
 import ApiDocsModal from "@/component/dashboard/getStarted/apiDocs";
 import TestKeysModal from "@/component/dashboard/getStarted/testKey";

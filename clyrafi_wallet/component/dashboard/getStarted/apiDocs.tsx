@@ -1,7 +1,7 @@
 "use client"
 
 import { X } from "lucide-react";
-import { Button } from "@/component/ui/Button";
+import { Button } from "@/component/ui/button";
 import { Dialog, DialogContent } from "@/component/ui/dialog";
 
 interface ApiDocsModalProps {
