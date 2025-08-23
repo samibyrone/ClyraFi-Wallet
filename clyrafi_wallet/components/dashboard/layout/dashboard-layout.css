@@ -1,0 +1,11 @@
+.dashboard-layout-nav {
+  /* Firefox */
+  scrollbar-width: none;
+  /* Internet Explorer 10+ */
+  -ms-overflow-style: none;
+}
+
+/* Safari and Chrome */
+.dashboard-layout-nav::-webkit-scrollbar {
+  display: none;
+}

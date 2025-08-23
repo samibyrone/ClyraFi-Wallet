@@ -1,11 +1,11 @@
 import { wallets } from "./wallets-stats"
-import { Badge } from "@/component/ui/badge"
-import { Input } from "@/component/ui/input"
-import { Button } from "@/component/ui/Button"
-import { Avatar, AvatarFallback } from "@/component/ui/avatar"
-import { DashboardLayout } from "@/component/dashboard/layout/dashboard-layout"
+import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { DashboardLayout } from "@/components/dashboard/layout/dashboard-layout"
 import { Search, Plus, Mail, Phone, Eye, MoreHorizontal } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/component/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function WalletsPage() {
   return (

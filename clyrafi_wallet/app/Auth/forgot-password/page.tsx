@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Button } from "@/component/ui/Button";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/component/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
@@ -55,7 +55,7 @@ export default function ForgotPasswordPage() {
             </Button>
             <div className='text-sm text-center text-muted-foreground'>
               Remember your password?{" "}
-              <Link href='/Auth/login' className='text-primary hover:text-gray-500 text-black'>
+              <Link href='/Auth/login' className='hover:text-gray-500 text-black'>
                 Sign in
               </Link>
             </div>

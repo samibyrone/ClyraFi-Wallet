@@ -2,10 +2,10 @@
 
 import { useState } from "react"
 import { X } from "lucide-react"
-import { Input } from "@/component/ui/input"
-import { Button } from "@/component/ui/Button"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/component/ui/dialog"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/component/ui/select"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 interface Wallet {
   id: string
@@ -138,7 +138,7 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
         <DialogHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b">
           <DialogTitle className="text-xl font-semibold">WaaS Sandbox</DialogTitle>
           <Button variant="ghost" size="sm" onClick={onClose}>
-            <X className="h-4 w-4" />
+            {/* <X className="h-4 w-4" /> */}
           </Button>
         </DialogHeader>
 

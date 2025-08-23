@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from "@/public/logo2.png";
-import { Button } from '@/component/ui/Button';
+import { Button } from '@/components/ui/button';
 
 export default function Navbar() {
   return (
@@ -12,7 +12,7 @@ export default function Navbar() {
           <span className="text-xl font-bold text-gray-900">ClyraFi</span>
         </div>
         <Link href="/Auth/login">
-          <Button variant="outline" className="border border-black text-black hover:bg-gray-50 bg-transparent font-semibold">
+          <Button variant="outline" className="border border-black text-black hover:bg-gray-50 bg-transparent font-semibold md:text-sm lg:text-base">
             Login
           </Button>
         </Link>

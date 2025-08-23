@@ -1,6 +1,6 @@
-import { Button } from "@/component/ui/Button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/component/ui/card"
-import { DashboardLayout } from "@/component/dashboard/layout/dashboard-layout"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { DashboardLayout } from "@/components/dashboard/layout/dashboard-layout"
 import { ArrowUpRight, ArrowDownRight, DollarSign, Users, CreditCard, TrendingUp } from "lucide-react"
 
 export default function HomePage() {

@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "component/dashboard/getStarted"  ],
+, "components/dashboard/getStarted"  ],
   "exclude": [
     "node_modules"
   ]

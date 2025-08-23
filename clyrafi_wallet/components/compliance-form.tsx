@@ -2,12 +2,12 @@
 
 import { useState } from "react"
 import { Check, Mail } from "lucide-react"
-import { Input } from "@/component/ui/input"
-import { Label } from "@/component/ui/label"
-import { Button } from "@/component/ui/Button"
-import { Card, CardContent } from "@/component/ui/card"
-import { RadioGroup, RadioGroupItem } from "../ui/radio-group"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/component/ui/select"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 const steps = [
   { id: "profile", name: "Profile", completed: false, current: true },
