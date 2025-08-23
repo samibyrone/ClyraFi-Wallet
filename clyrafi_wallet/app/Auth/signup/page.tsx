@@ -15,6 +15,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const { loading, signUp } = useAuth();
   const [formData, setFormData] = useState({
     country: "",
@@ -43,26 +44,43 @@ export default function SignUpPage() {
     }
     await signUp(formData);
   };
+  
+  const isFormValid = () => {
+    return (
+      formData.country.trim() !== "" &&
+      formData.businessName.trim() !== "" &&
+      formData.firstName.trim() !== "" &&
+      formData.lastName.trim() !== "" &&
+      formData.phoneNumber.trim() !== "" &&
+      formData.emailAddress.trim() !== "" &&
+      formData.password.trim() !== "" &&
+      formData.confirmPassword.trim() !== "" &&
+      formData.businessType !== "" &&
+      formData.softwareEngineer !== "" &&
+      formData.acceptTerms
+    );
+  };
 
-    const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
   return (
-    <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-[#6B3287] to-[#52027A]'>
-        <div className='text-center mb-300'>
+    <div className='min-h-screen bg-gradient-to-br from-[#6B3287] to-[#52027A]'>
+       <div className='absolute top-5 left-5 px-5'>
           <Link href='/' className='text-sm text-white hover:text-gray-400'>
             ← Back to home
           </Link>
         </div>
-      <div className='mt-20'>
+      <div className="flex items-center justify-center min-h-screen pt-16 pb-8 px-4">
+      <div className='w-full max-w-md'>
         <div className='flex items-center justify-center space-x-2 mb-6'>
           <div className='w-10 h-10 bg-white rounded-lg flex items-center justify-center'>
             <Image src={logo} alt='logo' className='w-7 h-7' />
           </div>
           <span className='text-2xl font-bold text-white'>ClyraFi</span>
         </div>
-        <Card className='w-full max-w-sm mx-4 bg-white mt-5 mb-20'>
+        <Card className='w-full max-w-sm mx-auto bg-white mt-5 mb-20'>
           <form onSubmit={handleSubmit}>
             <CardHeader className='space-y-1'>
               <CardTitle className='text-2xl font-bold'>
@@ -213,7 +231,7 @@ export default function SignUpPage() {
                   <Lock className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5' />
                   <Input
                     id="password"
-                    type={showPassword ? "text" : "password"}
+                    type={showConfirmPassword ? "text" : "password"}
                     placeholder="Confirm your password"
                     className='pl-10 pr-10'
                     value={formData.confirmPassword}
@@ -222,7 +240,7 @@ export default function SignUpPage() {
                   />
                   <button
                     type='button'
-                    onClick={() => setShowPassword(!showPassword)}
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                     className='absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600'
                   >
                     {showPassword ? (
@@ -272,7 +290,7 @@ export default function SignUpPage() {
               </div>
               <div className='space-y-4'>
                 <Label>Are you a software developer?</Label>
-                <div className="flex space-x-6">
+                <div className="flex flex-col sm:flex-row sm:space-x-6 space-y-2 sm:space-y-0 mt-1">
                     <label className="flex items-center space-x-2 cursor-pointer">
                       <input
                         type="radio"
@@ -280,7 +298,7 @@ export default function SignUpPage() {
                         value="yes"
                         checked={formData.softwareEngineer === 'yes'}
                         onChange={(e) => handleInputChange('softwareEngineer', e.target.value)}
-                        className="w-4 h-4 text-purple-600 border-gray-300 focus:ring-purple-500"
+                        className="mt-1 w-3 h-3 text-purple-600 border-gray-300 focus:ring-purple-500"
                       />
                       <span className="text-sm text-gray-900">Yes, I am</span>
                     </label>
@@ -291,7 +309,7 @@ export default function SignUpPage() {
                         value="no"
                         checked={formData.softwareEngineer === 'no'}
                         onChange={(e) => handleInputChange('softwareEngineer', e.target.value)}
-                        className="w-4 h-4 text-purple-600 border-gray-300 focus:ring-purple-500"
+                        className="mt-1 w-3 h-3 text-purple-600 border-gray-300 focus:ring-purple-500"
                       />
                       <span className="text-sm text-gray-900">No, I am not</span>
                     </label>
@@ -333,7 +351,7 @@ export default function SignUpPage() {
               <Button
                 type='submit'
                 className='w-full bg-purple-700 text-white font-semibold'
-                disabled={loading}
+                disabled={loading || !isFormValid()}
               >
                 {loading ? "Creating Account..." : "Create Account"}
               </Button>
@@ -349,6 +367,7 @@ export default function SignUpPage() {
             </CardFooter>
           </form>
         </Card>
+      </div>
       </div>
     </div>
   );

@@ -138,7 +138,7 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
         <DialogHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b">
           <DialogTitle className="text-xl font-semibold">WaaS Sandbox</DialogTitle>
           <Button variant="ghost" size="sm" onClick={onClose}>
-            <X className="h-4 w-4" />
+            {/* <X className="h-4 w-4" /> */}
           </Button>
         </DialogHeader>
 

@@ -13,7 +13,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const { loading: isLoading, signIn } = useAuth();
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     emailAddress: "",
@@ -22,17 +22,20 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-    signIn(formData);
+    signIn({ emailAddress: formData.emailAddress, password: formData.password });
+  };
+const isFormValid = () => {
+    return formData.emailAddress.trim() !== "" && formData.password.trim() !== "";
   };
 
   return (
-    <div className='min-h-screen flex items-center justify-center  bg-gradient-to-br from-[#6B3287] to-[#52027A]'>
-        <div className='text-center'>
+      <div className='min-h-screen bg-gradient-to-br from-[#6B3287] to-[#52027A]'>
+       <div className='absolute top-5 left-5 px-5'>
           <Link href='/' className='text-sm text-white hover:text-gray-400'>
             ← Back to home
           </Link>
         </div>
+        <div className="flex items-center justify-center min-h-screen pt-16 pb-8 px-4">
       <div className='max-w-md w-full space-y-8'>
         <div className='text-center'>
           <div className='flex items-center justify-center space-x-2 mb-6'>
@@ -43,7 +46,7 @@ export default function LoginPage() {
           </div>
           <h2 className='text-3xl font-bold text-white'>Welcome back.</h2>
         </div>
-        <Card className='w-full max-w-sm mx-4'>
+        <Card className='w-full max-w-sm mx-auto items-center justify-center'>
           <form onSubmit={handleSubmit}>
             <CardHeader className='space-y-1'>
               <CardTitle className='text-2xl font-bold'>
@@ -127,7 +130,7 @@ export default function LoginPage() {
               <Button
                 type='submit'
                 className='w-full bg-purple-800 text-white font-semibold'
-                disabled={isLoading}
+                disabled={isLoading || !isFormValid()}
               >
                 {isLoading ? "Signing In..." : "Sign In"}
               </Button>
@@ -144,9 +147,7 @@ export default function LoginPage() {
           </form>
         </Card>
       </div>
+      </div>
     </div>
   );
 };
-function signIn(formData: { emailAddress: string; password: string }) {
-  throw new Error("Function not implemented.");
-}
