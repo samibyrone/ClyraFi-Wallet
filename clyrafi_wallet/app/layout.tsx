@@ -1,7 +1,7 @@
 import "./globals.css";
 import React from "react";
 import type { Metadata } from "next";
-import { UserProvider } from "@/component/user-context";
+import { UserProvider } from "@/components/user-context";
 import { IBM_Plex_Sans, DM_Sans } from "next/font/google";
 
 const dmSans = DM_Sans({

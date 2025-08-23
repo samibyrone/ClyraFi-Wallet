@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { X, Copy, Check } from "lucide-react"
-import { Button } from "@/component/ui/button"
+import { Button } from "@/components/ui/button"
 
 interface TestKeysModalProps {
   isOpen: boolean

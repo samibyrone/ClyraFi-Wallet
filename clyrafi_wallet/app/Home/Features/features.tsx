@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import pics from "@/public/sample-pics.png";
-import { Button } from "@/component/ui/button";
+import { Button } from "@/components/ui/button";
 import { features } from "@/app/Home/Features/features-stats";
 
 export default function FeaturesSection() {

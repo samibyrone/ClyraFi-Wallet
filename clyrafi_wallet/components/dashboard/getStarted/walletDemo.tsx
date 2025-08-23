@@ -2,10 +2,10 @@
 
 import { useState } from "react"
 import { X } from "lucide-react"
-import { Input } from "@/component/ui/input"
-import { Button } from "@/component/ui/button"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/component/ui/dialog"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/component/ui/select"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 interface Wallet {
   id: string

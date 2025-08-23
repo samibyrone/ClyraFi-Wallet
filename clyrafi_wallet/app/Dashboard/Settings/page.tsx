@@ -1,16 +1,16 @@
 "use client"
 
 import { useState } from "react";
-import { Input } from "@/component/ui/input";
-import { Label } from "@/component/ui/label";
-import { Button } from "@/component/ui/button";
-import { useUser } from "@/component/user-context";
-import { Separator } from "@/component/ui/separator";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { useUser } from "@/components/user-context";
+import { Separator } from "@/components/ui/separator";
 import { User, Shield, Bell, CreditCard } from "lucide-react";
-import { Avatar, AvatarFallback } from "@/component/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 // import { Alert, AlertDescription } from "@/component/ui/alert";
-import { DashboardLayout } from "@/component/dashboard/layout/dashboard-layout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/component/ui/card";
+import { DashboardLayout } from "@/components/dashboard/layout/dashboard-layout";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function SettingsPage() {
   const { user, setUser } = useUser()

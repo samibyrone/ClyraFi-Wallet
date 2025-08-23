@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from "@/public/logo2.png";
-import { Button } from '@/component/ui/button';
+import { Button } from '@/components/ui/button';
 
 export default function Navbar() {
   return (

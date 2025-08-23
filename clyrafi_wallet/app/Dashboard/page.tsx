@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/component/ui/button";
+import { Button } from "@/components/ui/button";
 import { WalletCardsIcon, FileText, CloudIcon } from "lucide-react";
-import ApiDocsModal from "@/component/dashboard/getStarted/apiDocs";
-import TestKeysModal from "@/component/dashboard/getStarted/testKey";
-import DemoWalletModal from "@/component/dashboard/getStarted/walletDemo";
-import { Card, CardContent, CardHeader, CardTitle } from "@/component/ui/card";
-import { DashboardLayout } from "@/component/dashboard/layout/dashboard-layout";
+import ApiDocsModal from "@/components/dashboard/getStarted/apiDocs";
+import TestKeysModal from "@/components/dashboard/getStarted/testKey";
+import DemoWalletModal from "@/components/dashboard/getStarted/walletDemo";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { DashboardLayout } from "@/components/dashboard/layout/dashboard-layout";
 
 export default function DashboardPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);

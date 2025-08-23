@@ -1,11 +1,11 @@
-import { Badge } from "@/component/ui/badge";
-import { Button } from "@/component/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { transactions } from "./transaction-stats";
-import { Textarea } from "@/component/ui/textarea";
+import { Textarea } from "@/components/ui/textarea";
 import { Search, Filter, Download, Eye } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/component/ui/card";
-import { DashboardLayout } from "@/component/dashboard/layout/dashboard-layout";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/component/ui/select";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { DashboardLayout } from "@/components/dashboard/layout/dashboard-layout";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function TransactionsPage() {
   return (

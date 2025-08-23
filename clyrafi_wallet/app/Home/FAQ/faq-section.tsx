@@ -1,5 +1,5 @@
 import { faqs } from "@/app/Home/FAQ/faq-stats"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/component/ui/accordion"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export default function FAQSection() {
   return (

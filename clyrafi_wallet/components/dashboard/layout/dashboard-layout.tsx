@@ -4,13 +4,13 @@ import Image from "next/image";
 import "./dashboard-layout.css";
 import logo from "@/public/logo2.png";
 import React, { useState } from "react";
-import { Button } from "@/component/ui/button";
-import { useUser } from "@/component/user-context";
-import { Avatar, AvatarFallback } from "@/component/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { useUser } from "@/components/user-context";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ChevronDown, ChevronRight, LogOut, User, X } from "lucide-react";
-import DashboardNavbar from "@/component/dashboard/layout/DashboardNavbar";
+import DashboardNavbar from "@/components/dashboard/layout/DashboardNavbar";
 import { navigationItems, paymentItems, recurringItems, commerceItems, bottomItems } from "./dashboard-stats";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/component/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 interface DashboardLayoutProps {
   children: React.ReactNode

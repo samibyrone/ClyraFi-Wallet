@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/component/ui/button";
-import { useUser } from "@/component/user-context";
-import { Avatar, AvatarFallback } from "@/component/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { useUser } from "@/components/user-context";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Bell, ChevronDown, LogOut, Menu, User } from "lucide-react";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/component/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 interface DashboardNavbarProps {
   onMenuClick: () => void;

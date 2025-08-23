@@ -5,11 +5,11 @@ import Image from "next/image";
 import { useState } from "react";
 import logo from "@/public/logo2.png";
 import { useAuth } from "@/hooks/use-auth";
-import { Input } from "@/component/ui/input";
-import { Label } from "@/component/ui/label";
-import { Button } from "@/component/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/component/ui/card";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
