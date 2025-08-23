@@ -15,7 +15,7 @@ interface SignUpData {
 }
 
 interface SignInData {
-  email: string;
+  emailAddress: string;
   password: string;
 }
 
@@ -25,16 +25,15 @@ export function useAuth() {
 
   const signUp = async (data: SignUpData) => {
     if (data.password !== data.confirmPassword) {
-      alert("Passwords do not match"); // Using alert for simplicity
+      alert("Passwords do not match"); 
       return;
     }
 
     setLoading(true);
     try {
-      // Store user data in localStorage
       localStorage.setItem("user", JSON.stringify({ email: data.emailAddress, password: data.password }));
       alert("Account created successfully! Please sign in.");
-      router.push("/Auth/login"); // Redirect to login page after signup
+      router.push("/Auth/login");
     } catch (error) {
       console.error("Signup error:", error);
       alert("An error occurred during signup.");
@@ -49,7 +48,7 @@ export function useAuth() {
       const storedUser = localStorage.getItem("user");
       if (storedUser) {
         const user = JSON.parse(storedUser);
-        if (user.email === data.email && user.password === data.password) {
+        if (user.emailAddress === data.emailAddress && user.password === data.password) {
           router.push("/Dashboard");
         } else {
           alert("Invalid email or password.");

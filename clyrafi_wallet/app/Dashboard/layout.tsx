@@ -1,5 +1,5 @@
 import type React from "react"
-import { AuthGuard } from "@/component/auth-guard"
+import { AuthGuard } from "@/components/auth-guard"
 
 export default function DashboardLayout({
   children,
