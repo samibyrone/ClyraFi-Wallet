@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import "./dashboard-layout.css";
-import logo from "@/public/logo2.png";
+import logo from "@/public/logo.png";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useUser } from "@/components/user-context";
@@ -51,9 +51,9 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         </div>
         <div className="p-6 border-b border-purple-800">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+            {/* <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center"> */}
               <Image src={logo} alt="logo" className="w-6 h-6"/>
-            </div>
+            {/* </div> */}
             <span className="text-xl font-semibold">ClyraFi</span>
           </div>
         </div>
