@@ -2,7 +2,8 @@
 
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+// import "./getStarted.css";
 
 interface ApiDocsModalProps {
   isOpen: boolean
@@ -17,28 +18,37 @@ export default function ApiDocsModal({ isOpen, onClose }: ApiDocsModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md p-0 gap-0">
-        <div className="flex items-center justify-between p-6 pb-4">
-          <h2 className="text-xl font-semibold text-gray-900">API documentation</h2>
-          <button
-            onClick={onClose}
-            className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-          >
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto get-started-dialog-overlay">
+        <DialogHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b">
+          <DialogTitle className="text-xl font-semibold">API documentation</DialogTitle>
+          <Button variant="ghost" size="sm" onClick={onClose}>
             <X className="h-4 w-4" />
-            <span className="sr-only">Close</span>
-          </button>
-        </div>
+          </Button>
+        </DialogHeader>
 
-        <div className="px-6 pb-6">
-          <p className="text-gray-600 mb-6 leading-relaxed">
-            Our documentation contain the libraries, APIs and SDKs you need to integrate ClyraFi in your website or app
+        <div className="py-6">
+          <p className="text-gray-600 mb-8 leading-relaxed">
+            Our documentation contains the libraries, APIs and SDKs you need to integrate ClyraFi in your website or app
           </p>
+
+          <div className="bg-gray-50 rounded-lg p-6 mb-6">
+            <h3 className="font-medium text-lg mb-3">Getting Started</h3>
+            <p className="text-gray-600 mb-4">
+              Explore our comprehensive API documentation to learn how to integrate payment solutions into your application.
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-gray-600 mb-6">
+              <li>REST API reference with examples</li>
+              <li>Client libraries for popular languages</li>
+              <li>Webhook documentation</li>
+              <li>Authentication guides</li>
+            </ul>
+          </div>
 
           <Button
             onClick={handleGoToDocs}
-            className="w-full bg-white border border-purple-600 text-purple-600 hover:bg-purple-50"
+            className="w-full bg-purple-600 hover:bg-purple-700 text-white"
           >
-            Go to docs
+            Go to documentation
           </Button>
         </div>
       </DialogContent>
