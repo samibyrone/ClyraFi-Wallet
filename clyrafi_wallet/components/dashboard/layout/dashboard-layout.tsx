@@ -29,13 +29,13 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <div className="flex h-screen bg-gray-50">
       {sidebarOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
+        <div className= "fixed inset-0 z-50 bg-purple-950/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" onClick={() => setSidebarOpen(false)} />
       )}
        <div
         className={`
         ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
         fixed lg:relative lg:translate-x-0
-        w-64 bg-purple-900 text-white flex flex-col
+        w-74 bg-purple-900 text-white flex flex-col
         transition-transform duration-300 ease-in-out
         z-50 lg:z-auto
         h-full
@@ -52,10 +52,8 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           </Button>
         </div>
         <div className="p-6 border-b border-purple-800">
-          <div className="flex items-center space-x-2">
-            {/* <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center"> */}
-              <Image src={logo} alt="logo" className="w-6 h-6"/>
-            {/* </div> */}
+          <div className="flex items-center space-x-3">
+              <Image src={logo} alt="logo" className="w-8 h-8"/>
             <span className="text-xl font-semibold">ClyraFi</span>
           </div>
         </div>

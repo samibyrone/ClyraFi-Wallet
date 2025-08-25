@@ -36,9 +36,6 @@ export default function TestKeysModal({ isOpen, onClose }: TestKeysModalProps) {
             <DialogTitle className="text-xl font-semibold">Your test keys</DialogTitle>
             <p className="text-sm text-gray-600 mt-1">Also available in Settings &gt; API Keys & Webhooks</p>
           </div>
-          {/* <Button variant="ghost" size="sm" onClick={onClose}>
-            <X className="h-4 w-4" />
-          </Button> */}
         </DialogHeader>
 
         <div className="py-6">

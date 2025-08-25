@@ -40,7 +40,7 @@ const isFormValid = () => {
         <div className='text-center'>
           <div className='flex items-center justify-center space-x-2 mb-6'>
             <div className='w-10 h-10 bg-white rounded-lg flex items-center justify-center'>
-              <Image src={logo} alt='logo' className='w-7 h-7' />
+              <Image src={logo} alt='logo' className='w-8 h-8' />
             </div>
             <span className='text-2xl font-bold text-white'>ClyraFi</span>
           </div>

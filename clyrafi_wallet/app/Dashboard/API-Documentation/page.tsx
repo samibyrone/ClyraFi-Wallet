@@ -21,7 +21,6 @@ export default function APIDocumentationPage() {
     }
   }
 
-  // Sample API endpoints data
   const apiEndpoints = [
     {
       method: "POST",
@@ -75,10 +74,10 @@ export default function APIDocumentationPage() {
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
         <TabsList>
-          <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="authentication">Authentication</TabsTrigger>
-          <TabsTrigger value="endpoints">Endpoints</TabsTrigger>
-          <TabsTrigger value="webhooks">Webhooks</TabsTrigger>
+          <TabsTrigger value="overview" className="hover:shadow-lg transition-shadow border-none">Overview</TabsTrigger>
+          <TabsTrigger value="authentication" className="hover:shadow-lg transition-shadow border-none">Authentication</TabsTrigger>
+          <TabsTrigger value="endpoints" className="hover:shadow-lg transition-shadow border-none">Endpoints</TabsTrigger>
+          <TabsTrigger value="webhooks" className="hover:shadow-lg transition-shadow border-none">Webhooks</TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview" className="space-y-6">
@@ -89,7 +88,7 @@ export default function APIDocumentationPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <Card>
+                <Card className="hover:shadow-lg transition-shadow border-none">
                   <CardHeader>
                     <CardTitle className="text-lg">1. Create Account</CardTitle>
                   </CardHeader>
@@ -97,7 +96,7 @@ export default function APIDocumentationPage() {
                     <p className="text-gray-600">Sign up for a ClyraFi account to get your API keys</p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="hover:shadow-lg transition-shadow border-none">
                   <CardHeader>
                     <CardTitle className="text-lg">2. Get API Keys</CardTitle>
                   </CardHeader>
@@ -105,7 +104,7 @@ export default function APIDocumentationPage() {
                     <p className="text-gray-600">Find your test and live keys in the dashboard</p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="hover:shadow-lg transition-shadow border-none">
                   <CardHeader>
                     <CardTitle className="text-lg">3. Integrate</CardTitle>
                   </CardHeader>

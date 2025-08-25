@@ -136,9 +136,6 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
       <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto get-started-dialog-overlay w-[95vw] md:w-[90vw] lg:w-[80vw] xl:w-[70vw]">
         <DialogHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b">
           <DialogTitle className="text-xl font-semibold">WaaS Sandbox</DialogTitle>
-          {/* <Button variant="ghost" size="sm" onClick={onClose}> */}
-            {/* <X className="h-4 w-4" /> */}
-          {/* </Button> */}
         </DialogHeader>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 py-6">
@@ -184,7 +181,7 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
             <div className="space-y-4">
               <h4 className="font-medium">Create a new wallet test</h4>
 
-              <Select value={senderWallet} onValueChange={setSenderWallet} className="w-full">
+              <Select value={senderWallet} onValueChange={setSenderWallet}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select sender wallet" />
                 </SelectTrigger>
@@ -197,7 +194,7 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
                 </SelectContent>
               </Select>
 
-              <Select value={receiverWallet} onValueChange={setReceiverWallet} className="w-full">
+              <Select value={receiverWallet} onValueChange={setReceiverWallet}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select receiver wallet" />
                 </SelectTrigger>
