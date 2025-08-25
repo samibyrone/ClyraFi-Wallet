@@ -89,7 +89,7 @@ export default function HomePage() {
                   <div key={transaction.id} className="flex items-center justify-between py-2 hover:shadow-lg transition-shadow border-none">
                     <div className="flex-1">
                       <p className="font-medium text-sm">{transaction.customer}</p>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-gray-500 break-words">
                         {transaction.id} • {transaction.time}
                       </p>
                     </div>

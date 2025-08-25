@@ -1,4 +1,4 @@
-import { Home, FileText, CreditCard, Users, RefreshCw, DollarSign, AlertTriangle, Split, Building, Terminal, UserCheck, Calendar, Repeat, ShoppingCart, Package, StoreIcon as Storefront, ShoppingBag, Receipt, FileSearch, Settings } from "lucide-react"
+import { Home, FileText, CreditCard, Users, RefreshCw, DollarSign, AlertTriangle, Split, Building, Terminal, UserCheck, Calendar, Repeat, ShoppingCart, Package, StoreIcon as Storefront, ShoppingBag, Receipt, FileSearch, Settings, BookOpen } from "lucide-react"
 
 
 export const navigationItems = [
@@ -34,5 +34,6 @@ export const commerceItems = [
 
 export const bottomItems = [
   { name: "Audit logs", icon: FileSearch, href: "/Dashboard/Audit-logs" },
+  { name: "API Documentation", icon: BookOpen, href: "/Dashboard/API-Documentation" },
   { name: "Settings", icon: Settings, href: "/Dashboard/Settings" },
 ]

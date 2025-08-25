@@ -10,7 +10,7 @@ export default function Footer() {
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-10 sm:mt-20'>
           <div className='md:col-span-2'>
             <div className='mb-4 flex items-center space-x-2'>
-              <Image src={logo} alt="logo" className="w-6 h-6"/>
+              <Image src={logo} alt="logo" className="w-8 h-8"/>
               <span className='text-xl font-bold'>ClyraFi</span>
             </div>
             <p className='mb-4 text-gray-400 max-w-xs'>

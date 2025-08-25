@@ -3,7 +3,7 @@
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-// import "./getStarted.css";
+import { useRouter } from "next/navigation";
 
 interface ApiDocsModalProps {
   isOpen: boolean
@@ -11,19 +11,21 @@ interface ApiDocsModalProps {
 }
 
 export default function ApiDocsModal({ isOpen, onClose }: ApiDocsModalProps) {
+  const router = useRouter();
+  
   const handleGoToDocs = () => {
-    window.open("https://docs.clyarafi.com", "_blank")
-    onClose()
+    router.push("/Dashboard/API-Documentation");
+    onClose();
   }
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto get-started-dialog-overlay">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto get-started-dialog-overlay w-[95vw] md:w-[90vw]">
         <DialogHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b">
           <DialogTitle className="text-xl font-semibold">API documentation</DialogTitle>
-          <Button variant="ghost" size="sm" onClick={onClose}>
+          {/* <Button variant="ghost" size="sm" onClick={onClose}>
             <X className="h-4 w-4" />
-          </Button>
+          </Button> */}
         </DialogHeader>
 
         <div className="py-6">
@@ -46,7 +48,7 @@ export default function ApiDocsModal({ isOpen, onClose }: ApiDocsModalProps) {
 
           <Button
             onClick={handleGoToDocs}
-            className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+            className="w-full bg-purple-800 hover:bg-purple-700 text-white"
           >
             Go to documentation
           </Button>
