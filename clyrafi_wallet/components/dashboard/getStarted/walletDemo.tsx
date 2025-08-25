@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-// import "./getStarted.css";
 
 interface Wallet {
   id: string
@@ -134,27 +133,27 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto get-started-dialog-overlay">
+      <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto get-started-dialog-overlay w-[95vw] md:w-[90vw] lg:w-[80vw] xl:w-[70vw]">
         <DialogHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b">
           <DialogTitle className="text-xl font-semibold">WaaS Sandbox</DialogTitle>
-          <Button variant="ghost" size="sm" onClick={onClose}>
+          {/* <Button variant="ghost" size="sm" onClick={onClose}> */}
             {/* <X className="h-4 w-4" /> */}
-          </Button>
+          {/* </Button> */}
         </DialogHeader>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 py-6">
           <div className="space-y-6">
             <h3 className="text-lg font-medium">Test wallets</h3>
             <div className="space-y-4">
               <h4 className="font-medium">Create a new wallet test</h4>
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Input
                   placeholder="Wallet name"
                   value={walletName}
                   onChange={(e) => setWalletName(e.target.value)}
                   className="flex-1"
                 />
-                <Button onClick={createWallet} className="bg-purple-600 hover:bg-purple-700">
+                <Button onClick={createWallet} className="bg-purple-800 hover:bg-purple-700 w-full sm:w-auto">
                   Create wallet
                 </Button>
               </div>
@@ -164,14 +163,14 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
               <h4 className="font-medium">Your test wallets</h4>
               <div className="space-y-3">
                 {wallets.map((wallet) => (
-                  <div key={wallet.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                    <div>
-                      <div className="font-medium text-purple-600">{wallet.name}</div>
-                      <div className="text-sm text-gray-600">{wallet.id}</div>
+                  <div key={wallet.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-gray-50 rounded-lg gap-3">
+                    <div className="flex-1">
+                      <div className="font-medium text-purple-700">{wallet.name}</div>
+                      <div className="text-xs sm:text-sm text-gray-600 break-all">{wallet.id}</div>
                     </div>
                     <div className="text-right">
                       <div className="font-semibold">{wallet.balance.toFixed(2)}</div>
-                      <div className="text-sm text-gray-600">USD (test)</div>
+                      <div className="text-xs sm:text-sm text-gray-600">USD (test)</div>
                     </div>
                   </div>
                 ))}
@@ -185,8 +184,8 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
             <div className="space-y-4">
               <h4 className="font-medium">Create a new wallet test</h4>
 
-              <Select value={senderWallet} onValueChange={setSenderWallet}>
-                <SelectTrigger>
+              <Select value={senderWallet} onValueChange={setSenderWallet} className="w-full">
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select sender wallet" />
                 </SelectTrigger>
                 <SelectContent>
@@ -198,8 +197,8 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
                 </SelectContent>
               </Select>
 
-              <Select value={receiverWallet} onValueChange={setReceiverWallet}>
-                <SelectTrigger>
+              <Select value={receiverWallet} onValueChange={setReceiverWallet} className="w-full">
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select receiver wallet" />
                 </SelectTrigger>
                 <SelectContent>
@@ -211,10 +210,10 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
                 </SelectContent>
               </Select>
 
-              <Input placeholder="Amount" type="number" value={amount} onChange={(e) => setAmount(e.target.value)} />
+              <Input placeholder="Amount" type="number" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full" />
 
               <div className="space-y-3">
-                <Button onClick={executeTransfer} className="w-full bg-purple-600 hover:bg-purple-700">
+                <Button onClick={executeTransfer} className="w-full bg-purple-800 hover:bg-purple-700">
                   Execute transfer
                 </Button>
 
@@ -236,13 +235,15 @@ export default function DemoWalletModal({ isOpen, onClose }: DemoWalletModalProp
                 ) : (
                   <div className="space-y-2">
                     {apiLogs.map((log) => (
-                      <div key={log.id} className="text-sm">
-                        <span className="text-gray-600">[{log.timestamp}]</span>{" "}
-                        <span className={log.status === "success" ? "text-green-600" : "text-red-600"}>{log.type}</span>
+                      <div key={log.id} className="text-xs sm:text-sm">
+                        <div className="flex flex-wrap items-center gap-1">
+                          <span className="text-gray-600">[{log.timestamp}]</span>
+                          <span className={log.status === "success" ? "text-green-600" : "text-red-600"}>{log.type}</span>
+                        </div>
                         {log.from && log.to && log.amount && (
-                          <span className="text-gray-700">
-                            : {log.from} → {log.to} ({log.amount} USD)
-                          </span>
+                          <div className="text-gray-700 mt-1">
+                            {log.from} → {log.to} ({log.amount} USD)
+                          </div>
                         )}
                       </div>
                     ))}

@@ -4,7 +4,6 @@ import { useState } from "react"
 import { X, Copy, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-// import "./getStarted.css"
 
 interface TestKeysModalProps {
   isOpen: boolean
@@ -31,15 +30,15 @@ export default function TestKeysModal({ isOpen, onClose }: TestKeysModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto get-started-dialog-overlay">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto get-started-dialog-overlay w-[95vw] md:w-[90vw]">
         <DialogHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b">
           <div>
             <DialogTitle className="text-xl font-semibold">Your test keys</DialogTitle>
             <p className="text-sm text-gray-600 mt-1">Also available in Settings &gt; API Keys & Webhooks</p>
           </div>
-          <Button variant="ghost" size="sm" onClick={onClose}>
+          {/* <Button variant="ghost" size="sm" onClick={onClose}>
             <X className="h-4 w-4" />
-          </Button>
+          </Button> */}
         </DialogHeader>
 
         <div className="py-6">
@@ -58,8 +57,8 @@ export default function TestKeysModal({ isOpen, onClose }: TestKeysModalProps) {
           <div className="space-y-6">
             <div className="space-y-3">
               <label className="text-sm font-medium text-gray-700">Test secret key</label>
-              <div className="flex items-center space-x-3">
-                <div className="flex-1 px-4 py-3 border border-gray-300 rounded-md bg-gray-50 font-mono text-sm text-gray-800 overflow-x-auto">
+              <div className="flex flex-col sm:flex-row items-center space-x-3">
+                <div className="flex-1 px-4 py-3 border border-gray-300 rounded-md bg-gray-50 font-mono text-sm text-gray-800  mb-2 sm:mb-0">
                   {testKeys.secret}
                 </div>
                 <Button
@@ -76,8 +75,8 @@ export default function TestKeysModal({ isOpen, onClose }: TestKeysModalProps) {
 
             <div className="space-y-3">
               <label className="text-sm font-medium text-gray-700">Test public key</label>
-              <div className="flex items-center space-x-3">
-                <div className="flex-1 px-4 py-3 border border-gray-300 rounded-md bg-gray-50 font-mono text-sm text-gray-800 overflow-x-auto">
+              <div className="flex flex-col sm:flex-row items-center space-x-3">
+                <div className="flex-1 px-4 py-3 border border-gray-300 rounded-md bg-gray-50 font-mono text-sm text-gray-800  mb-2 sm:mb-0">
                   {testKeys.public}
                 </div>
                 <Button

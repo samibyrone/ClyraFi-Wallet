@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import "./dashboard-layout.css";
 import logo from "@/public/logo.png";
 import React, { useState } from "react";
@@ -21,6 +22,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
   const [paymentExpanded, setPaymentExpanded] = useState(true)
   const [recurringExpanded, setRecurringExpanded] = useState(true)
   const [commerceExpanded, setCommerceExpanded] = useState(true)
+  const pathname = usePathname();
   const [sidebarOpen, setSidebarOpen] = React.useState(false); 
 
 
@@ -101,7 +103,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               <a
                 key={item.name}
                 href={item.href}
-                className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-purple-800 hover:text-white transition-colors"
+                className={`flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  pathname === item.href 
+                    ? "bg-white text-purple-700" 
+                    : "text-purple-200 hover:text-white hover:bg-purple-700"
+                }`}
                 onClick={() => setSidebarOpen(false)}
               >
                 <item.icon className="w-5 h-5" />
@@ -124,7 +130,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-purple-800 hover:text-white transition-colors"
+                      className={`flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                        pathname === item.href 
+                          ? "bg-white text-purple-700" 
+                          : "text-purple-200 hover:text-white hover:bg-purple-700"
+                      }`}
                       onClick={() => setSidebarOpen(false)}
                     >
                       <item.icon className="w-5 h-5" />
@@ -150,7 +160,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                      <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-purple-800 hover:text-white transition-colors"
+                      className={`flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                        pathname === item.href 
+                          ? "bg-white text-purple-700" 
+                          : "text-purple-200 hover:text-white hover:bg-purple-700"
+                      }`}
                       onClick={() => setSidebarOpen(false)}
                     >
                       <item.icon className="w-5 h-5" />
@@ -176,7 +190,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-purple-800 hover:text-white transition-colors"
+                      className={`flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                        pathname === item.href 
+                          ? "bg-white text-purple-700" 
+                          : "text-purple-200 hover:text-white hover:bg-purple-700"
+                      }`}
                       onClick={() => setSidebarOpen(false)}
                     >
                       <item.icon className="w-5 h-5" />
@@ -194,7 +212,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                  <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-purple-200 hover:bg-purple-800 hover:text-white transition-colors"
+                  className={`flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    pathname === item.href 
+                      ? "bg-white text-purple-700" 
+                          : "text-purple-200 hover:text-white hover:bg-purple-700"
+                  }`}
                   onClick={() => setSidebarOpen(false)}
                 >
                   <item.icon className="w-5 h-5" />
