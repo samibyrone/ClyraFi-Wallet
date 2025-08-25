@@ -14,7 +14,6 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const { loading: isLoading, signIn } = useAuth();
-  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     emailAddress: "",
     password: ""
