@@ -10,12 +10,12 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends[
+  ...compat.extends(
     "next/core-web-vitals", 
     "next/typescript",
     "plugin: testing-library/react",
     "plugin: jest-dom/recommended"
-  ],
+  ),
 ];
 
 export default eslintConfig;
